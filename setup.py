@@ -30,7 +30,8 @@ setup(
     ],
     python_requires=">=3.8",
     install_requires=[
-        "numpy==1.26.4",
+        'numpy==1.24.4; python_version < "3.9"',
+        'numpy==1.26.4; python_version >= "3.9" and python_version < "3.13"',
     ],
     extras_require={
         "dev": [
