@@ -53,9 +53,9 @@ class TestPTDC:
         results = ptdc.evaluate(metrics)
         
         assert len(results) == 10
-        # Agents with metric >= 0.8 should pass
-        assert results["agent_3"] is False  # 0.8 exactly
-        assert results["agent_4"] is True   # 0.9
+        # Agents with metric > 0.8 should pass (threshold is 0.8, uses > not >=)
+        assert results["agent_3"] is False  # 0.8 exactly (not greater than threshold)
+        assert results["agent_4"] is True   # 0.9 (greater than threshold)
     
     def test_sub_millisecond_latency(self):
         """Test that detection is sub-millisecond"""
