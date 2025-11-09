@@ -200,6 +200,12 @@ class Runtime:
         Returns:
             Dictionary containing step results and metrics
         """
+        # Auto-start if in INITIALIZING state
+        if self.state == RuntimeState.INITIALIZING:
+            self.state = RuntimeState.RUNNING
+            self.start_time = time.time()
+            self.last_snapshot_time = time.time()
+        
         if self.state != RuntimeState.RUNNING:
             raise RuntimeError(f"Cannot execute step in state: {self.state}")
         
