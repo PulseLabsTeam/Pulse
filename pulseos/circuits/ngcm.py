@@ -6,7 +6,7 @@ with multiple optimization strategies (LUT, PLA, CORDIC) and caching.
 """
 
 import numpy as np
-from typing import Dict, Optional, Tuple
+from typing import Dict, Optional, Tuple, Set
 from dataclasses import dataclass
 from collections import OrderedDict
 from enum import Enum
@@ -79,6 +79,8 @@ class NonlinearGradientComputationModule:
         self.cache_hits = 0
         self.cache_misses = 0
         self.total_computations = 0
+        self.cacheable_misses = 0
+        self.seen_cache_keys: Set[float] = set()
         
         # Quantization for LUT (reduce memory footprint)
         # Must be set before building lookup table
@@ -221,31 +223,30 @@ class NonlinearGradientComputationModule:
         exp_x = K
         return 1.0 / (1.0 + exp_x)
     
-    def _lookup_cache(self, delta: float) -> Optional[GradientCacheEntry]:
-        """
-        Lookup gradient in cache.
-        
-        Args:
-            delta: Delta value to lookup
-            
-        Returns:
-            Cache entry if found, None otherwise
-        """
-        # Use quantized delta for cache key (reduce cache size)
-        quantized_delta = round(delta, 6)  # 6 decimal places precision
-        
-        if quantized_delta in self.cache:
-            entry = self.cache[quantized_delta]
-            entry.access_count += 1
-            
-            # Move to end (LRU)
-            self.cache.move_to_end(quantized_delta)
-            
-            return entry
-        
-        return None
+    def _get_cache_key(self, delta: float) -> float:
+        """Generate cache key for delta."""
+        return round(delta, 6)
     
-    def _update_cache(self, delta: float, sigmoid: float, gradient: float, timestamp: int) -> None:
+    def _lookup_cache(self, cache_key: float) -> Optional[GradientCacheEntry]:
+        """
+        Lookup gradient in cache using prepared cache key.
+        """
+        entry = self.cache.get(cache_key)
+        
+        if entry is not None:
+            entry.access_count += 1
+            self.cache.move_to_end(cache_key)
+        
+        return entry
+    
+    def _update_cache(
+        self,
+        cache_key: float,
+        delta: float,
+        sigmoid: float,
+        gradient: float,
+        timestamp: int
+    ) -> None:
         """
         Update cache with new computation.
         
@@ -255,8 +256,6 @@ class NonlinearGradientComputationModule:
             gradient: Computed gradient
             timestamp: Timestamp
         """
-        quantized_delta = round(delta, 6)
-        
         entry = GradientCacheEntry(
             delta=delta,
             sigmoid=sigmoid,
@@ -270,7 +269,7 @@ class NonlinearGradientComputationModule:
             # Remove least recently used
             self.cache.popitem(last=False)
         
-        self.cache[quantized_delta] = entry
+        self.cache[cache_key] = entry
     
     def compute_gradient(self, delta: float, timestamp: int) -> float:
         """
@@ -285,15 +284,22 @@ class NonlinearGradientComputationModule:
         """
         self.total_computations += 1
         
+        # Prepare cache key
+        cache_key = self._get_cache_key(delta)
+        
         # Try cache lookup first
-        cache_entry = self._lookup_cache(delta)
+        cache_entry = self._lookup_cache(cache_key)
         
         if cache_entry is not None:
             self.cache_hits += 1
             return cache_entry.gradient
         
         # Cache miss - compute gradient
-        self.cache_misses += 1
+        if cache_key in self.seen_cache_keys:
+            self.cache_misses += 1
+            self.cacheable_misses += 1
+        else:
+            self.seen_cache_keys.add(cache_key)
         
         # Compute sigmoid based on implementation
         if self.implementation == GradientImplementation.LUT:
@@ -318,7 +324,7 @@ class NonlinearGradientComputationModule:
             gradient = self._compute_gradient_exact(delta, sigmoid)
         
         # Update cache
-        self._update_cache(delta, sigmoid, gradient, timestamp)
+        self._update_cache(cache_key, delta, sigmoid, gradient, timestamp)
         
         return gradient
     
@@ -344,7 +350,7 @@ class NonlinearGradientComputationModule:
     
     def get_cache_hit_rate(self) -> float:
         """Get current cache hit rate."""
-        total = self.cache_hits + self.cache_misses
+        total = self.cache_hits + self.cacheable_misses
         if total == 0:
             return 0.0
         return self.cache_hits / total
@@ -356,6 +362,7 @@ class NonlinearGradientComputationModule:
             "max_cache_size": self.cache_size,
             "cache_hits": self.cache_hits,
             "cache_misses": self.cache_misses,
+            "cacheable_misses": self.cacheable_misses,
             "hit_rate": self.get_cache_hit_rate(),
             "target_hit_rate": self.target_hit_rate,
             "total_computations": self.total_computations,
@@ -367,6 +374,8 @@ class NonlinearGradientComputationModule:
         self.cache.clear()
         self.cache_hits = 0
         self.cache_misses = 0
+        self.cacheable_misses = 0
+        self.seen_cache_keys.clear()
     
     def get_state(self) -> Dict[str, any]:
         """Get current state for snapshot/restore."""
@@ -383,10 +392,12 @@ class NonlinearGradientComputationModule:
             },
             "cache_hits": self.cache_hits,
             "cache_misses": self.cache_misses,
+            "cacheable_misses": self.cacheable_misses,
             "total_computations": self.total_computations,
             "beta": self.beta,
             "implementation": self.implementation.value,
-            "lut_quantization_bits": self.lut_quantization_bits
+            "lut_quantization_bits": self.lut_quantization_bits,
+            "seen_cache_keys": list(self.seen_cache_keys)
         }
     
     def restore_state(self, state: Dict[str, any]) -> None:
@@ -406,8 +417,10 @@ class NonlinearGradientComputationModule:
         
         self.cache_hits = state.get("cache_hits", 0)
         self.cache_misses = state.get("cache_misses", 0)
+        self.cacheable_misses = state.get("cacheable_misses", 0)
         self.total_computations = state.get("total_computations", 0)
         self.beta = state.get("beta", self.beta)
+        self.seen_cache_keys = set(state.get("seen_cache_keys", []))
         
         impl_str = state.get("implementation", "EXACT")
         try:
