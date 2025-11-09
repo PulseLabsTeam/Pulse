@@ -6,11 +6,22 @@ from pulseos.optimization.cache import (
     CacheOptimizer,
     ZeroCopyBuffer
 )
+from pulseos.optimization.gradient_cache import GradientCache, CacheMetrics
+from pulseos.optimization.hardware import (
+    HardwareEmulationLayer,
+    HardwareProfile,
+    HardwareMode
+)
 
 __all__ = [
     "MemoryPool",
     "VectorizationUtils",
     "CacheOptimizer",
-    "ZeroCopyBuffer"
+    "ZeroCopyBuffer",
+    "GradientCache",
+    "CacheMetrics",
+    "HardwareEmulationLayer",
+    "HardwareProfile",
+    "HardwareMode"
 ]
 
