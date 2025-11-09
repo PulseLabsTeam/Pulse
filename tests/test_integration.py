@@ -7,16 +7,18 @@ Tests end-to-end workflows and subsystem integration.
 import pytest
 import asyncio
 from pulseos import Runtime, Config, Agent, SurvivalConstraint
+from pulseos.runtime import RuntimeState
 from pulseos.persistence.snapshot import SnapshotManager, StateSnapshot
 
 
 class IntegrationAgent(Agent):
     """Agent for integration testing"""
     
-    def __init__(self, agent_id: str):
+    def __init__(self, agent_id: str, initial_performance: float = 0.5):
         super().__init__(agent_id)
         self.state = 0.0
         self.target = 1.0
+        self.performance = initial_performance
     
     async def step(self) -> dict:
         error = self.target - self.state
@@ -25,6 +27,9 @@ class IntegrationAgent(Agent):
         return {"state": self.state, "error": abs(error)}
     
     def get_performance_metric(self) -> float:
+        # Use stored performance or compute from state
+        if hasattr(self, 'performance'):
+            return self.performance
         error = abs(self.target - self.state)
         return 1.0 - error
 
@@ -49,7 +54,7 @@ class TestIntegration:
         
         # Verify runtime state
         assert runtime.current_step == 20
-        assert runtime.state.value == "running"
+        assert runtime.state == RuntimeState.RUNNING
         assert len(runtime.agents) == 10
         
         # Verify statistics
@@ -70,8 +75,7 @@ class TestIntegration:
         
         # Register agents with low performance
         for i in range(5):
-            agent = IntegrationAgent(f"agent_{i}")
-            agent.performance = 0.2  # Low performance
+            agent = IntegrationAgent(f"agent_{i}", initial_performance=0.2)
             runtime.register_agent(f"agent_{i}", agent)
         
         # Run steps to create snapshots
@@ -194,11 +198,11 @@ class TestIntegration:
         
         # Pause
         runtime.pause()
-        assert runtime.state.value == "paused"
+        assert runtime.state == RuntimeState.PAUSED
         
         # Resume
         runtime.resume()
-        assert runtime.state.value == "running"
+        assert runtime.state == RuntimeState.RUNNING
         
         # Continue running
         await runtime.step()
