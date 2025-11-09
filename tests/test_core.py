@@ -324,7 +324,8 @@ class TestRetryHandler:
         assert result == "success"
         assert attempt_count[0] == 2
     
-    def test_max_delay_limit(self):
+    @pytest.mark.asyncio
+    async def test_max_delay_limit(self):
         """Test max delay limit"""
         handler = RetryHandler(
             max_retries=5,
@@ -335,4 +336,21 @@ class TestRetryHandler:
         
         # Should not exceed max_delay even with exponential growth
         assert handler.max_delay == 0.1
+        
+        # Test that delays are capped
+        call_count = [0]
+        async def failing_func():
+            call_count[0] += 1
+            raise ValueError("Error")
+        
+        start_time = time.time()
+        with pytest.raises(ValueError):
+            await handler.execute_with_retry(failing_func)
+        elapsed = time.time() - start_time
+        
+        # Should have delays capped at max_delay
+        # With max_retries=5, we have 5 retries, so 4 delays
+        # Each delay should be <= max_delay (0.1)
+        # Total time should be reasonable
+        assert elapsed < 1.0  # Should complete quickly with small delays
 
