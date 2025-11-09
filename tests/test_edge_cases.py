@@ -14,6 +14,25 @@ from pulseos.persistence.snapshot import StateSnapshot, SnapshotManager
 from pulseos.persistence.merkle import MerkleTree, SnapshotIntegrity
 
 
+class IntegrationAgent(Agent):
+    """Agent for integration testing"""
+    
+    def __init__(self, agent_id: str):
+        super().__init__(agent_id)
+        self.state = 0.0
+        self.target = 1.0
+        self.performance = 0.5
+    
+    async def step(self) -> dict:
+        error = self.target - self.state
+        self.state += self.learning_rate * error
+        self.state = max(0.0, min(1.0, self.state))
+        return {"state": self.state, "error": abs(error)}
+    
+    def get_performance_metric(self) -> float:
+        return self.performance
+
+
 class TestEdgeCases:
     """Tests for edge cases and boundary conditions"""
     
@@ -212,23 +231,4 @@ class TestEdgeCases:
         # Modified data should fail
         modified_data = {"step": 1, "agents": {"agent1": {"state": 0.6}}}
         assert integrity.verify_snapshot("snapshot1", modified_data) is False
-
-
-class IntegrationAgent(Agent):
-    """Agent for integration testing"""
-    
-    def __init__(self, agent_id: str):
-        super().__init__(agent_id)
-        self.state = 0.0
-        self.target = 1.0
-        self.performance = 0.5
-    
-    async def step(self) -> dict:
-        error = self.target - self.state
-        self.state += self.learning_rate * error
-        self.state = max(0.0, min(1.0, self.state))
-        return {"state": self.state, "error": abs(error)}
-    
-    def get_performance_metric(self) -> float:
-        return self.performance
 
