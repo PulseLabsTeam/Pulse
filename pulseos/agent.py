@@ -43,7 +43,8 @@ class SurvivalConstraint:
         threshold: float,
         constraint_type: str = "simple",
         temporal_window: Optional[int] = None,
-        statistical_mode: Optional[str] = None
+        statistical_mode: Optional[str] = None,
+        learning_rate: float = 0.01
     ):
         """
         Initialize survival constraint.
@@ -53,6 +54,7 @@ class SurvivalConstraint:
             constraint_type: Type of constraint (simple, composite, temporal, statistical)
             temporal_window: Window size for temporal constraints
             statistical_mode: Statistical mode (mean, median, percentile, variance)
+            learning_rate: Learning rate for adaptive threshold (default: 0.01)
         """
         self.threshold = threshold
         self.constraint_type = constraint_type
@@ -64,7 +66,7 @@ class SurvivalConstraint:
         
         # Adaptive threshold learning
         self.adaptive_threshold = threshold
-        self.learning_rate = 0.01
+        self.learning_rate = learning_rate
     
     def evaluate(self, metric: float) -> bool:
         """
