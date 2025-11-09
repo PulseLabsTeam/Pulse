@@ -81,7 +81,8 @@ class TestIntegration:
         # Run steps to create snapshots
         for _ in range(10):
             await runtime.step()
-            await asyncio.sleep(0.05)  # Allow snapshot creation
+            # Small delay to allow snapshot creation
+            await asyncio.sleep(0.01)
         
         # Verify snapshots were created
         snapshot_count = runtime.sprs.get_snapshot_count()
