@@ -385,7 +385,8 @@ class NonlinearGradientComputationModule:
             "cache_misses": self.cache_misses,
             "total_computations": self.total_computations,
             "beta": self.beta,
-            "implementation": self.implementation.value
+            "implementation": self.implementation.value,
+            "lut_quantization_bits": self.lut_quantization_bits
         }
     
     def restore_state(self, state: Dict[str, any]) -> None:
@@ -413,6 +414,10 @@ class NonlinearGradientComputationModule:
             self.implementation = GradientImplementation(impl_str)
         except ValueError:
             self.implementation = GradientImplementation.EXACT
+        
+        # Restore LUT quantization parameters (must be before rebuilding LUT)
+        self.lut_quantization_bits = state.get("lut_quantization_bits", 12)
+        self.lut_quantization_factor = 2 ** self.lut_quantization_bits
         
         # Rebuild LUT if needed
         if self.implementation == GradientImplementation.LUT:
