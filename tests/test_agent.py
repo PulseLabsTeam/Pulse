@@ -6,7 +6,7 @@ Tests agent interface, survival constraints, and constraint evaluation.
 
 import pytest
 import numpy as np
-from pulseos.agent import Agent, SurvivalConstraint, ConstraintOperator
+from pulseos.agent import Agent, SurvivalConstraint
 
 
 class TestAgent(Agent):
