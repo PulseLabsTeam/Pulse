@@ -18,7 +18,7 @@ class ThresholdConfig:
     threshold: float
     normalization_window: int = 100
     detection_interval: float = 0.001  # Sub-millisecond
-    enable_normalization: bool = True
+    enable_normalization: bool = False
 
 
 class PerformanceThresholdDetectionCircuit:
@@ -36,7 +36,8 @@ class PerformanceThresholdDetectionCircuit:
         self,
         threshold: float,
         normalization_window: int = 100,
-        detection_interval: float = 0.001
+        detection_interval: float = 0.001,
+        enable_normalization: bool = False
     ):
         """
         Initialize PTDC.
@@ -49,7 +50,8 @@ class PerformanceThresholdDetectionCircuit:
         self.config = ThresholdConfig(
             threshold=threshold,
             normalization_window=normalization_window,
-            detection_interval=detection_interval
+            detection_interval=detection_interval,
+            enable_normalization=enable_normalization
         )
         
         # Normalization baseline storage
@@ -138,7 +140,7 @@ class PerformanceThresholdDetectionCircuit:
         # Normalize metrics if enabled
         if self.config.enable_normalization:
             initial_values = np.array([
-                self.initial_metrics.get(aid, metrics[aid])
+                self.initial_metrics.get(aid, 1.0)
                 for aid in agent_ids
             ])
             # Avoid division by zero
@@ -154,7 +156,7 @@ class PerformanceThresholdDetectionCircuit:
         
         # Parallel comparison array (vectorized)
         # Hardware-optimized: single vectorized operation
-        threshold_status = normalized_metrics >= thresholds
+        threshold_status = normalized_metrics > thresholds
         
         # Update history
         current_time = time.time()

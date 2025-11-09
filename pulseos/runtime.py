@@ -39,6 +39,7 @@ class Config:
     # PTDC Configuration
     threshold_detection_interval: float = 0.001  # Sub-millisecond detection
     normalization_window: int = 100
+    enable_normalization: bool = False
     
     # NGCM Configuration
     gradient_cache_size: int = 256
@@ -47,12 +48,12 @@ class Config:
     target_cache_hit_rate: float = 0.75
     
     # APC Configuration
-    alpha_base: float = 0.01
-    alpha_max_change_per_step: float = 0.10  # 10% max change
+    alpha_base: float = 0.05
+    alpha_max_change_per_step: float = 0.20  # 20% max change
     alpha_smooth: float = 0.9  # EMA smoothing
     epsilon_min: float = 0.01
-    epsilon_max: float = 0.3
-    epsilon_kappa: float = 2.0
+    epsilon_max: float = 0.2
+    epsilon_kappa: float = 1.5
     gamma: float = 0.1
     
     # SPRS Configuration
@@ -107,7 +108,8 @@ class Runtime:
         self.ptdc = PerformanceThresholdDetectionCircuit(
             threshold=self.constraint.threshold,
             normalization_window=self.config.normalization_window,
-            detection_interval=self.config.threshold_detection_interval
+            detection_interval=self.config.threshold_detection_interval,
+            enable_normalization=self.config.enable_normalization
         )
         
         self.ngcm = NonlinearGradientComputationModule(
@@ -430,8 +432,11 @@ class Runtime:
             
             if best_snapshot is None:
                 print("No recovery snapshot available")
-                self.state = RuntimeState.ERROR
-                self._emit_event("error", {"type": "rollback_failed", "reason": "no_snapshot"})
+                self.state = RuntimeState.RUNNING
+                self._emit_event(
+                    "error",
+                    {"type": "rollback_skipped", "reason": "no_snapshot"}
+                )
                 return
             
             # Restore state

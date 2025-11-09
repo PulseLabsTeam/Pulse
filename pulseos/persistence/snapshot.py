@@ -205,7 +205,8 @@ class StateSnapshot:
         """Get compression ratio."""
         if self.size_bytes == 0:
             return 1.0
-        return self.compressed_size_bytes / self.size_bytes
+        ratio = self.compressed_size_bytes / self.size_bytes
+        return min(1.0, ratio)
 
 
 class SnapshotManager:
