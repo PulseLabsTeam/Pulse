@@ -79,10 +79,12 @@ class TestIntegration:
             runtime.register_agent(f"agent_{i}", agent)
         
         # Run steps to create snapshots
-        for _ in range(10):
+        # Need to ensure enough time passes for snapshot interval (0.1s)
+        for i in range(15):
             await runtime.step()
-            # Small delay to allow snapshot creation
-            await asyncio.sleep(0.01)
+            # Sleep longer to ensure snapshot interval is reached
+            if i > 0:  # Skip first sleep
+                await asyncio.sleep(0.02)  # 20ms * 14 = 280ms > 100ms interval
         
         # Verify snapshots were created
         snapshot_count = runtime.sprs.get_snapshot_count()

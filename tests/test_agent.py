@@ -141,9 +141,11 @@ class TestSurvivalConstraint:
         constraint.evaluate(0.9)
         
         # Mean should be >= threshold
+        # Mean of [0.7, 0.8, 0.9] = 0.8, but due to floating point precision it might be slightly less
         mean = np.mean([0.7, 0.8, 0.9])
         result = constraint.evaluate(0.85)
-        assert result == (mean >= 0.8)
+        # Use approximate comparison to handle floating point precision
+        assert result == (mean >= pytest.approx(0.8, abs=0.01))
     
     def test_statistical_constraint_median(self):
         """Test statistical constraint with median"""
@@ -179,14 +181,18 @@ class TestSurvivalConstraint:
     
     def test_adapt_threshold(self):
         """Test threshold adaptation"""
-        constraint = SurvivalConstraint(threshold=0.8)
+        constraint = SurvivalConstraint(threshold=0.8, learning_rate=0.1)
         original_threshold = constraint.threshold
         
         # Adapt based on performance history
-        performance_history = [0.7, 0.75, 0.8, 0.85, 0.9]
+        # Median of [0.7, 0.75, 0.8, 0.85, 0.9] = 0.8
+        # With learning_rate=0.1, new_threshold = 0.9 * 0.8 + 0.1 * 0.8 = 0.8
+        # So threshold stays the same. Use different values to ensure change.
+        performance_history = [0.5, 0.6, 0.7, 0.8, 0.9]  # Median is 0.7
         constraint.adapt_threshold(performance_history)
         
-        # Threshold should move toward median
+        # Threshold should move toward median (0.7)
+        # new_threshold = 0.9 * 0.8 + 0.1 * 0.7 = 0.72 + 0.07 = 0.79
         assert constraint.threshold != original_threshold
         assert constraint.threshold >= 0.0
         assert constraint.threshold <= 1.0
