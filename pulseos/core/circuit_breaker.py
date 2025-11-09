@@ -6,11 +6,10 @@ retry logic, and graceful degradation.
 """
 
 from typing import Optional, Callable, Any, Dict
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from enum import Enum
 import time
 import asyncio
-from collections import deque
 
 
 class CircuitState(Enum):
