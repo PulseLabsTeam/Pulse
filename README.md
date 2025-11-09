@@ -82,9 +82,18 @@ asyncio.run(main())
 
 See the `examples/` directory for:
 
+### Basic Examples
 - `basic_survival.py`: Simple agent example
 - `swarm_coordination.py`: 1000+ agent swarm
 - `benchmark.py`: Performance validation suite
+
+### Advanced Examples
+- `robotics_safety.py`: Safety-critical robotics control
+- `finance_portfolio.py`: Portfolio optimization with risk constraints
+- `game_ai.py`: Multi-agent game AI with competitive strategies
+- `custom_constraints.py`: Advanced constraint configurations
+- `performance_tuning.py`: Performance optimization guide
+- `impressive_swarm.py`: Large-scale swarm coordination
 
 ## Architecture
 
@@ -128,6 +137,12 @@ python examples/benchmark.py
 ```
 
 ## Documentation
+
+### Getting Started
+
+- **[Getting Started Guide](docs/GETTING_STARTED.md)**: Comprehensive tutorial
+- **[API Documentation](docs/)**: Full API reference (Sphinx)
+- **[Technical Documentation](TECHNICAL.md)**: Algorithm details and architecture
 
 ### Core Algorithms
 
