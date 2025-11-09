@@ -175,6 +175,10 @@ class Runtime:
         self.agents[agent_id] = agent
         self.agent_metrics[agent_id] = deque(maxlen=self.config.normalization_window)
         
+        # Register agent with PTDC using initial performance metric
+        initial_metric = agent.get_performance_metric()
+        self.ptdc.register_agent(agent_id, initial_metric)
+        
     def unregister_agent(self, agent_id: str) -> None:
         """Unregister an agent from the runtime."""
         if agent_id in self.agents:

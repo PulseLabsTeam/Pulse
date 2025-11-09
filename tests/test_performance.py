@@ -81,10 +81,16 @@ class TestPerformance:
             enable_delta_encoding=True
         )
         
-        # Delta snapshot should be smaller
-        compression_ratio = delta_snapshot.get_compression_ratio()
+        # Delta snapshot should be smaller than parent snapshot
+        # Compare delta snapshot size to parent snapshot size
+        delta_size = delta_snapshot.size_bytes
+        parent_size = parent_snapshot.size_bytes
         
-        # With delta encoding, we should see significant reduction
-        # (exact ratio depends on data, but should be < 1.0)
+        # Delta encoding should reduce size significantly
+        # With only one agent change, delta should be much smaller
+        assert delta_size < parent_size, f"Delta size ({delta_size}) should be < parent size ({parent_size})"
+        
+        # Compression ratio should also be reasonable
+        compression_ratio = delta_snapshot.get_compression_ratio()
         assert compression_ratio <= 1.0
 
