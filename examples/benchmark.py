@@ -12,10 +12,17 @@ Validates performance targets from patent/whitepaper:
 import asyncio
 import time
 import random
+import os
 import numpy as np
 from pulseos import Runtime, Config, Agent, SurvivalConstraint
 from pulseos.circuits.ngcm import NonlinearGradientComputationModule
 from pulseos.circuits.ptdc import PerformanceThresholdDetectionCircuit
+
+# Optional import for scalability benchmark
+try:
+    import psutil
+except ImportError:
+    psutil = None
 
 
 class BenchmarkAgent(Agent):
@@ -150,8 +157,10 @@ async def benchmark_scalability():
     print("Benchmark 4: Scalability (10,000 agents)")
     print("=" * 60)
     
-    import psutil
-    import os
+    if psutil is None:
+        print("psutil not available, skipping scalability benchmark")
+        print("Install with: pip install psutil")
+        return
     
     process = psutil.Process(os.getpid())
     initial_memory = process.memory_info().rss / 1024 / 1024  # MB
