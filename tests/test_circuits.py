@@ -64,6 +64,10 @@ class TestPTDC:
         ptdc = PerformanceThresholdDetectionCircuit(threshold=0.8)
         metrics = {f"agent_{i}": 0.9 for i in range(100)}
         
+        # Register agents first to avoid registration overhead during timing
+        for agent_id in metrics.keys():
+            ptdc.register_agent(agent_id, 0.5)
+        
         latencies = []
         for _ in range(100):
             start = time.perf_counter()

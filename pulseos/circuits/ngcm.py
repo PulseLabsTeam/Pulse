@@ -300,6 +300,7 @@ class NonlinearGradientComputationModule:
             self.cacheable_misses += 1
         else:
             self.seen_cache_keys.add(cache_key)
+            self.cache_misses += 1
         
         # Compute sigmoid based on implementation
         if self.implementation == GradientImplementation.LUT:
@@ -350,7 +351,7 @@ class NonlinearGradientComputationModule:
     
     def get_cache_hit_rate(self) -> float:
         """Get current cache hit rate."""
-        total = self.cache_hits + self.cacheable_misses
+        total = self.cache_hits + self.cache_misses
         if total == 0:
             return 0.0
         return self.cache_hits / total
