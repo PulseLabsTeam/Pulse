@@ -80,13 +80,14 @@ class NonlinearGradientComputationModule:
         self.cache_misses = 0
         self.total_computations = 0
         
+        # Quantization for LUT (reduce memory footprint)
+        # Must be set before building lookup table
+        self.lut_quantization_bits = 12
+        self.lut_quantization_factor = 2 ** self.lut_quantization_bits
+        
         # Initialize lookup table if using LUT
         if self.implementation == GradientImplementation.LUT:
             self._build_lookup_table()
-        
-        # Quantization for LUT (reduce memory footprint)
-        self.lut_quantization_bits = 12
-        self.lut_quantization_factor = 2 ** self.lut_quantization_bits
     
     def _build_lookup_table(self) -> None:
         """Build lookup table for sigmoid computation."""
