@@ -237,7 +237,7 @@ class Runtime:
         
         # Check if snapshot is needed
         if self._should_create_snapshot():
-            await self._create_snapshot()
+            await self._create_snapshot(survival_signal)
         
         # Check if rollback is needed
         if self._should_rollback(survival_signal):
@@ -384,11 +384,12 @@ class Runtime:
         
         return time_since_snapshot >= self.config.snapshot_interval
     
-    async def _create_snapshot(self) -> None:
+    async def _create_snapshot(self, survival_signal: float) -> None:
         """Create a state snapshot."""
         snapshot_data = {
             "step": self.current_step,
             "timestamp": time.time(),
+            "survival_signal": survival_signal,
             "agents": {
                 agent_id: agent.get_state()
                 for agent_id, agent in self.agents.items()
@@ -404,6 +405,10 @@ class Runtime:
     def _should_rollback(self, survival_signal: float) -> bool:
         """Determine if rollback is needed based on survival signal."""
         if survival_signal >= self.config.critical_survival_threshold:
+            return False
+        
+        # Don't rollback if no snapshots exist
+        if self.sprs.get_snapshot_count() == 0:
             return False
         
         # Check if signal has been below threshold for grace period
@@ -439,14 +444,22 @@ class Runtime:
                 )
                 return
             
+            # Get full snapshot data
+            # Find parent snapshot if needed for delta decoding
+            parent_snapshot = None
+            if best_snapshot.parent_snapshot_id:
+                parent_snapshot = self.sprs.get_snapshot(best_snapshot.parent_snapshot_id)
+            
+            snapshot_data = best_snapshot.get_full_data(parent_snapshot)
+            
             # Restore state
-            await self._restore_snapshot(best_snapshot)
+            await self._restore_snapshot(snapshot_data)
             
             # Increase exploration for recovery
             self.apc.increase_exploration()
             
             self.state = RuntimeState.RUNNING
-            self._emit_event("rollback", {"snapshot": best_snapshot, "step": self.current_step})
+            self._emit_event("rollback", {"snapshot": best_snapshot.snapshot_id, "step": self.current_step})
             
         except Exception as e:
             self.state = RuntimeState.ERROR
