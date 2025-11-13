@@ -1,0 +1,25 @@
+# Baseline PPO Configuration
+# Week 1 Day 5-7
+
+model_name: "gpt2"
+reward_model_path: "pulseos_rlhf/reward_model"
+device: "cuda"  # or "cpu"
+
+# PPO settings
+learning_rate: 1.41e-5
+batch_size: 16
+mini_batch_size: 4
+ppo_epochs: 4
+ppo_clip_epsilon: 0.2
+
+# Generation settings
+max_length: 512
+max_new_tokens: 64
+
+# Convergence settings (fixed from previous attempts)
+target_reward: -1.0  # Negative for HH-RLHF (was positive 0.85)
+convergence_window: 20  # Not too short
+min_samples: 200  # Not instant
+max_samples: 5000  # For testing
+
+

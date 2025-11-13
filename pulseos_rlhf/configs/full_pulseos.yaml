@@ -1,0 +1,38 @@
+# Full PulseOS Configuration
+# Week 3 Day 19-21
+
+model_name: "gpt2"
+reward_model_path: "pulseos_rlhf/reward_model"
+device: "cuda"
+
+# PPO settings
+learning_rate: 1.41e-5
+batch_size: 16
+mini_batch_size: 4
+ppo_epochs: 4
+ppo_clip_epsilon: 0.2
+
+# Generation settings
+max_length: 512
+max_new_tokens: 64
+
+# Death penalty settings
+death_threshold: -2.0
+death_penalty: -10.0
+
+# Runtime settings
+survival_threshold: 0.55
+alpha_max_change: 0.50
+gamma: 0.5
+
+# Population settings
+population_size: 5
+elimination_rate: 0.2
+
+# Convergence settings
+target_reward: -1.0
+convergence_window: 20
+min_samples: 200
+max_samples: 5000
+
+

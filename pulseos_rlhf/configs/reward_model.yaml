@@ -1,0 +1,22 @@
+# Reward Model Training Configuration
+# Week 1 Day 3-4
+
+model_name: "gpt2"
+dataset_name: "Anthropic/hh-rlhf"
+output_dir: "pulseos_rlhf/reward_model"
+
+# Training settings (fixed from previous attempts)
+num_train_samples: 8000  # 5K-10K range (was 1K)
+num_epochs: 7  # 5-10 epochs (was 3)
+learning_rate: 2e-5
+batch_size: 4
+max_length: 512
+
+# Validation
+val_size: 1000
+eval_strategy: "epoch"
+save_strategy: "epoch"
+load_best_model_at_end: true
+
+# Logging
+logging_steps: 10
