@@ -1,6 +1,6 @@
 # PulseOS Framework
 
-Production-grade survival-pressure learning framework implementing patent-specified adaptive learning algorithms.
+Production-grade survival-pressure learning framework implementing patent pending adaptive learning algorithms.
 
 ## Overview
 
