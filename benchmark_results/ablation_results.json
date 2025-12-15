@@ -1,0 +1,224 @@
+{
+  "multi_objective_normal_th-0.5": [
+    {
+      "configuration": "Full PulseOS",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    },
+    {
+      "configuration": "Without PTDC",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    },
+    {
+      "configuration": "Without NGCM",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    },
+    {
+      "configuration": "Without APC",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    },
+    {
+      "configuration": "Only Survival Constraint",
+      "avg_steps": 363.8,
+      "std_steps": 595.699723014876,
+      "steps": [
+        49,
+        49,
+        1554,
+        49,
+        118
+      ]
+    },
+    {
+      "configuration": "PPO with Survival Constraint",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    }
+  ],
+  "linear_bimodal_th-0.5": [
+    {
+      "configuration": "Full PulseOS",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    },
+    {
+      "configuration": "Without PTDC",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    },
+    {
+      "configuration": "Without NGCM",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    },
+    {
+      "configuration": "Without APC",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    },
+    {
+      "configuration": "Only Survival Constraint",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    },
+    {
+      "configuration": "PPO with Survival Constraint",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    }
+  ],
+  "linear_skewed_th-0.3": [
+    {
+      "configuration": "Full PulseOS",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    },
+    {
+      "configuration": "Without PTDC",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    },
+    {
+      "configuration": "Without NGCM",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    },
+    {
+      "configuration": "Without APC",
+      "avg_steps": 50.4,
+      "std_steps": 2.8000000000000003,
+      "steps": [
+        49,
+        49,
+        49,
+        56,
+        49
+      ]
+    },
+    {
+      "configuration": "Only Survival Constraint",
+      "avg_steps": 55.4,
+      "std_steps": 12.8,
+      "steps": [
+        49,
+        49,
+        81,
+        49,
+        49
+      ]
+    },
+    {
+      "configuration": "PPO with Survival Constraint",
+      "avg_steps": 49.0,
+      "std_steps": 0.0,
+      "steps": [
+        49,
+        49,
+        49,
+        49,
+        49
+      ]
+    }
+  ]
+}

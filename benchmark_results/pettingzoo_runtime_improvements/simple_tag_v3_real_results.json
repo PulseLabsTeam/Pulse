@@ -1,0 +1,370 @@
+{
+  "avg_convergence_improvement": 4.7413793103448185,
+  "avg_alpha_change_magnitude": 0.004425111213736852,
+  "avg_adaptation_signal_variance": 0.001890316923799346,
+  "recommendation": "REMOVE_RUNTIME",
+  "population_only_results": [
+    {
+      "trial": 1,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 0.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 2,
+      "method": "population_only",
+      "convergence_episodes": 24,
+      "success": true,
+      "final_reward": -5.096094963585092,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 3,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 9.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 4,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 1.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 5,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 3.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 6,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 2.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 7,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 3.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 8,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 3.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 9,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 0.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 10,
+      "method": "population_only",
+      "convergence_episodes": 11,
+      "success": true,
+      "final_reward": 2.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 11,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 3.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 12,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 4.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 13,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 3.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 14,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 0.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 15,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 3.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 16,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 6.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 17,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 3.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 18,
+      "method": "population_only",
+      "convergence_episodes": 27,
+      "success": true,
+      "final_reward": 2.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 19,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 2.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 20,
+      "method": "population_only",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 0.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    }
+  ],
+  "population_runtime_results": [
+    {
+      "trial": 1,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 0.0,
+      "alpha_change_magnitude": 0.0052465403631180366,
+      "adaptation_signal_variance": 0.005006250000000002
+    },
+    {
+      "trial": 2,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 11,
+      "success": true,
+      "final_reward": 0.4154798906568091,
+      "alpha_change_magnitude": 0.0005490385059965172,
+      "adaptation_signal_variance": 0.0008367768595041337
+    },
+    {
+      "trial": 3,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 0.0,
+      "alpha_change_magnitude": 0.006046787839363889,
+      "adaptation_signal_variance": 0.004500000000000001
+    },
+    {
+      "trial": 4,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 0.0,
+      "alpha_change_magnitude": 0.005308529348326159,
+      "adaptation_signal_variance": 0.004275000000000002
+    },
+    {
+      "trial": 5,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 1.0,
+      "alpha_change_magnitude": 0.003129026906750418,
+      "adaptation_signal_variance": 0.0013500000000000027
+    },
+    {
+      "trial": 6,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 0.0,
+      "alpha_change_magnitude": 0.0052465403631180366,
+      "adaptation_signal_variance": 0.005006250000000002
+    },
+    {
+      "trial": 7,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 2.0,
+      "alpha_change_magnitude": 0.00562001803551971,
+      "adaptation_signal_variance": 0.0005062500000000008
+    },
+    {
+      "trial": 8,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 3.0,
+      "alpha_change_magnitude": 0.0063222968438235785,
+      "adaptation_signal_variance": 1.232595164407831e-32
+    },
+    {
+      "trial": 9,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 3.0,
+      "alpha_change_magnitude": 0.0041481323341856224,
+      "adaptation_signal_variance": 0.0013500000000000025
+    },
+    {
+      "trial": 10,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 5.0,
+      "alpha_change_magnitude": 0.005005706609313015,
+      "adaptation_signal_variance": 0.0009000000000000015
+    },
+    {
+      "trial": 11,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 3.0,
+      "alpha_change_magnitude": 0.0005490385059965172,
+      "adaptation_signal_variance": 0.0009000000000000017
+    },
+    {
+      "trial": 12,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 0.0,
+      "alpha_change_magnitude": 0.007701551809153641,
+      "adaptation_signal_variance": 0.0027562500000000005
+    },
+    {
+      "trial": 13,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 5.0,
+      "alpha_change_magnitude": 0.0005490385059965172,
+      "adaptation_signal_variance": 0.0009000000000000017
+    },
+    {
+      "trial": 14,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 0.0,
+      "alpha_change_magnitude": 0.007663827365246741,
+      "adaptation_signal_variance": 0.003150000000000001
+    },
+    {
+      "trial": 15,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 13,
+      "success": true,
+      "final_reward": 0.5917351132096815,
+      "alpha_change_magnitude": 0.004851272118468544,
+      "adaptation_signal_variance": 0.0022633136094674577
+    },
+    {
+      "trial": 16,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 6.0,
+      "alpha_change_magnitude": 0.006140163727761001,
+      "adaptation_signal_variance": 0.0022500000000000007
+    },
+    {
+      "trial": 17,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 4.0,
+      "alpha_change_magnitude": 0.0063222968438235785,
+      "adaptation_signal_variance": 1.232595164407831e-32
+    },
+    {
+      "trial": 18,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 21,
+      "success": true,
+      "final_reward": -2.2386421573421647,
+      "alpha_change_magnitude": 0.0023651344247669834,
+      "adaptation_signal_variance": 0.001020408163265308
+    },
+    {
+      "trial": 19,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 16,
+      "success": true,
+      "final_reward": 3.0,
+      "alpha_change_magnitude": 0.00019096991512920075,
+      "adaptation_signal_variance": 0.00032958984375000056
+    },
+    {
+      "trial": 20,
+      "method": "population_runtime_improved",
+      "convergence_episodes": 10,
+      "success": true,
+      "final_reward": 2.0,
+      "alpha_change_magnitude": 0.005546313908879295,
+      "adaptation_signal_variance": 0.0005062500000000008
+    }
+  ]
+}

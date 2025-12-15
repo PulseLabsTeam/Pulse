@@ -1,0 +1,62 @@
+[
+  {
+    "death_penalty": -100.0,
+    "ppo_avg_sharpe": 4.047370708522475,
+    "pulseos_avg_sharpe": 1.681357101872295,
+    "improvement": -58.45804046731149,
+    "pulseos_std": 1.5067775495305837,
+    "ppo_std": 0.31089391859874294,
+    "success_rate": 33.33333333333333,
+    "high_performance_rate": 33.33333333333333,
+    "trials": 3,
+    "episodes": 200
+  },
+  {
+    "death_penalty": -50.0,
+    "ppo_avg_sharpe": 4.029733779330106,
+    "pulseos_avg_sharpe": 1.371503017887367,
+    "improvement": -65.965418735047,
+    "pulseos_std": 0.9554293626582396,
+    "ppo_std": 0.550879190782896,
+    "success_rate": 66.66666666666666,
+    "high_performance_rate": 0.0,
+    "trials": 3,
+    "episodes": 200
+  },
+  {
+    "death_penalty": -25.0,
+    "ppo_avg_sharpe": 3.821230100943062,
+    "pulseos_avg_sharpe": 1.3790067662284116,
+    "improvement": -63.91196735605952,
+    "pulseos_std": 0.5340040023804602,
+    "ppo_std": 0.2998733410263584,
+    "success_rate": 33.33333333333333,
+    "high_performance_rate": 0.0,
+    "trials": 3,
+    "episodes": 200
+  },
+  {
+    "death_penalty": -10.0,
+    "ppo_avg_sharpe": 3.8141996338565676,
+    "pulseos_avg_sharpe": 1.6172232579131585,
+    "improvement": -57.59993148869423,
+    "pulseos_std": 1.1690899239753363,
+    "ppo_std": 0.26467712126954185,
+    "success_rate": 66.66666666666666,
+    "high_performance_rate": 0.0,
+    "trials": 3,
+    "episodes": 200
+  },
+  {
+    "death_penalty": -5.0,
+    "ppo_avg_sharpe": 4.019617650327635,
+    "pulseos_avg_sharpe": 2.1113381355914926,
+    "improvement": -47.47415502518256,
+    "pulseos_std": 0.4054617071681237,
+    "ppo_std": 0.5658002313371657,
+    "success_rate": 100.0,
+    "high_performance_rate": 0.0,
+    "trials": 3,
+    "episodes": 200
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "test_config": {
+    "episodes": 1000,
+    "trials": 1,
+    "seed": 1,
+    "no_warm_start": true
+  },
+  "ppo_baseline": {
+    "final_sharpe": 3.6248966269730225,
+    "episodes": 1000
+  },
+  "pulseos_result": {
+    "final_sharpe": 3.688268681325206,
+    "improvement_vs_ppo": 1.748244456976484,
+    "beats_ppo": 

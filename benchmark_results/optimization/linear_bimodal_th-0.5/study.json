@@ -1,0 +1,316 @@
+{
+  "best_params": {
+    "survival_threshold": 0.6000000000000001,
+    "alpha_base": 0.02267398652378041,
+    "epsilon_min": 0.02,
+    "epsilon_max": 0.4,
+    "gamma": 6.0,
+    "beta": 2.0,
+    "cache_size": 320,
+    "alpha_max_change": 0.15000000000000002
+  },
+  "best_value": 19.786096256684495,
+  "n_trials": 20,
+  "trials": [
+    {
+      "number": 0,
+      "value": -112.9251700680272,
+      "params": {
+        "survival_threshold": 0.55,
+        "alpha_base": 0.0711447600934342,
+        "epsilon_min": 0.08,
+        "epsilon_max": 0.5,
+        "gamma": 2.0,
+        "beta": 4.0,
+        "cache_size": 64,
+        "alpha_max_change": 0.45000000000000007
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 1,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.7,
+        "alpha_base": 0.013311216080736894,
+        "epsilon_min": 0.01,
+        "epsilon_max": 0.7,
+        "gamma": 9.0,
+        "beta": 6.0,
+        "cache_size": 128,
+        "alpha_max_change": 0.15000000000000002
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 2,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.5,
+        "alpha_base": 0.003752055855124282,
+        "epsilon_min": 0.05,
+        "epsilon_max": 0.30000000000000004,
+        "gamma": 7.0,
+        "beta": 4.0,
+        "cache_size": 192,
+        "alpha_max_change": 0.25
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 3,
+      "value": 19.786096256684495,
+      "params": {
+        "survival_threshold": 0.6000000000000001,
+        "alpha_base": 0.02267398652378041,
+        "epsilon_min": 0.02,
+        "epsilon_max": 0.4,
+        "gamma": 6.0,
+        "beta": 2.0,
+        "cache_size": 320,
+        "alpha_max_change": 0.15000000000000002
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 4,
+      "value": -183.67346938775512,
+      "params": {
+        "survival_threshold": 0.3,
+        "alpha_base": 0.07025166339242163,
+        "epsilon_min": 0.09999999999999999,
+        "epsilon_max": 0.6,
+        "gamma": 4.0,
+        "beta": 2.0,
+        "cache_size": 384,
+        "alpha_max_change": 0.25
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 5,
+      "value": -1.3513513513513467,
+      "params": {
+        "survival_threshold": 0.35,
+        "alpha_base": 0.0030586566669785274,
+        "epsilon_min": 0.01,
+        "epsilon_max": 0.7,
+        "gamma": 3.0,
+        "beta": 14.0,
+        "cache_size": 192,
+        "alpha_max_change": 0.30000000000000004
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 6,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.65,
+        "alpha_base": 0.00035856126103454,
+        "epsilon_min": 0.09999999999999999,
+        "epsilon_max": 0.6,
+        "gamma": 10.0,
+        "beta": 18.0,
+        "cache_size": 320,
+        "alpha_max_change": 0.5
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 7,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.35,
+        "alpha_base": 0.0003872118032174585,
+        "epsilon_min": 0.01,
+        "epsilon_max": 0.30000000000000004,
+        "gamma": 4.0,
+        "beta": 6.0,
+        "cache_size": 448,
+        "alpha_max_change": 0.25
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 8,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.45,
+        "alpha_base": 0.004247058562261873,
+        "epsilon_min": 0.02,
+        "epsilon_max": 0.6,
+        "gamma": 1.0,
+        "beta": 20.0,
+        "cache_size": 448,
+        "alpha_max_change": 0.15000000000000002
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 9,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.3,
+        "alpha_base": 0.027950159165083355,
+        "epsilon_min": 0.08,
+        "epsilon_max": 0.6,
+        "gamma": 8.0,
+        "beta": 2.0,
+        "cache_size": 192,
+        "alpha_max_change": 0.15000000000000002
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 10,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.9000000000000001,
+        "alpha_base": 0.00010422971466648504,
+        "epsilon_min": 0.04,
+        "epsilon_max": 0.1,
+        "gamma": 6.0,
+        "beta": 10.0,
+        "cache_size": 512,
+        "alpha_max_change": 0.1
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 11,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.8,
+        "alpha_base": 0.0013766157379784647,
+        "epsilon_min": 0.03,
+        "epsilon_max": 0.4,
+        "gamma": 4.0,
+        "beta": 14.0,
+        "cache_size": 256,
+        "alpha_max_change": 0.35
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 12,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.4,
+        "alpha_base": 0.0116161265577815,
+        "epsilon_min": 0.03,
+        "epsilon_max": 0.1,
+        "gamma": 3.0,
+        "beta": 12.0,
+        "cache_size": 320,
+        "alpha_max_change": 0.35
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 13,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.6000000000000001,
+        "alpha_base": 0.0017321767217417182,
+        "epsilon_min": 0.01,
+        "epsilon_max": 0.30000000000000004,
+        "gamma": 6.0,
+        "beta": 16.0,
+        "cache_size": 256,
+        "alpha_max_change": 0.35
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 14,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.75,
+        "alpha_base": 0.009777307763661364,
+        "epsilon_min": 0.060000000000000005,
+        "epsilon_max": 0.7,
+        "gamma": 5.0,
+        "beta": 10.0,
+        "cache_size": 192,
+        "alpha_max_change": 0.30000000000000004
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 15,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.95,
+        "alpha_base": 0.02519601925265552,
+        "epsilon_min": 0.03,
+        "epsilon_max": 0.4,
+        "gamma": 2.0,
+        "beta": 14.0,
+        "cache_size": 64,
+        "alpha_max_change": 0.2
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 16,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.45,
+        "alpha_base": 0.0011338744633362205,
+        "epsilon_min": 0.05,
+        "epsilon_max": 0.2,
+        "gamma": 7.0,
+        "beta": 8.0,
+        "cache_size": 384,
+        "alpha_max_change": 0.45000000000000007
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 17,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.8500000000000001,
+        "alpha_base": 0.004785694631818146,
+        "epsilon_min": 0.02,
+        "epsilon_max": 0.5,
+        "gamma": 5.0,
+        "beta": 14.0,
+        "cache_size": 128,
+        "alpha_max_change": 0.1
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 18,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.55,
+        "alpha_base": 0.030558519659833343,
+        "epsilon_min": 0.06999999999999999,
+        "epsilon_max": 0.5,
+        "gamma": 1.0,
+        "beta": 18.0,
+        "cache_size": 256,
+        "alpha_max_change": 0.30000000000000004
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 19,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.65,
+        "alpha_base": 0.000595492268662876,
+        "epsilon_min": 0.02,
+        "epsilon_max": 0.2,
+        "gamma": 3.0,
+        "beta": 12.0,
+        "cache_size": 384,
+        "alpha_max_change": 0.4
+      },
+      "state": "COMPLETE"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PulseOS Benchmark Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #A23B72;
+            padding-bottom: 10px;
+        }
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .summary-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .summary-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .summary-card .value {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .chart-container {
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PulseOS Benchmark Dashboard</h1>
+        <p>Generated: 2025-11-09 22:57:35</p>
+        
+        <div class="summary">
+
+            <div class="summary-card">
+                <h3>Average Reduction</h3>
+                <div class="value">32.3%</div>
+            </div>
+            <div class="summary-card">
+                <h3>Best Scenario</h3>
+                <div class="value">90.8%</div>
+            </div>
+            <div class="summary-card">
+                <h3>Worst Scenario</h3>
+                <div class="value">-2.0%</div>
+            </div>
+            <div class="summary-card">
+                <h3>Scenarios Tested</h3>
+                <div class="value">5</div>
+            </div>
+
+        </div>
+        
+        <div class="chart-container">
+            <h2>Step Reduction by Scenario</h2>
+            <div id="reductionChart"></div>
+        </div>
+        
+        <div class="chart-container">
+            <h2>Convergence Comparison</h2>
+            <div id="convergenceChart"></div>
+        </div>
+    </div>
+    
+    <script>
+
+        // Step Reduction Chart
+        var reductionData = [{
+            x: ["linear_normal_th-0.5", "nonlinear_normal_th-0.5", "multi_objective_normal_th-0.5", "linear_bimodal_th-0.5", "linear_skewed_th-0.3"],
+            y: [90.81894968784428, 73.14609509731461, 1.3806706114398477, -2.0408163265306123, -1.8329938900203637],
+            type: 'bar',
+            marker: {
+                color: ["#28A745", "#28A745", "#DC3545", "#DC3545", "#DC3545"]
+            }
+        }];
+        
+        var reductionLayout = {
+            title: 'Step Reduction by Scenario',
+            xaxis: { title: 'Scenario' },
+            yaxis: { title: 'Reduction (%)' },
+            shapes: [
+                {type: 'line', x0: -0.5, x1: 4.5, y0: 60, y1: 60, 
+                 line: {color: 'green', width: 2, dash: 'dash'}},
+                {type: 'line', x0: -0.5, x1: 4.5, y0: 40, y1: 40, 
+                 line: {color: 'orange', width: 2, dash: 'dash'}}
+            ]
+        };
+        
+        Plotly.newPlot('reductionChart', reductionData, reductionLayout);
+        
+        // Convergence Comparison Chart
+        var convergenceData = [
+            {
+                name: 'PPO',
+                x: ["linear_normal_th-0.5", "nonlinear_normal_th-0.5", "multi_objective_normal_th-0.5", "linear_bimodal_th-0.5", "linear_skewed_th-0.3"],
+                y: [544.6, 2029.5, 50.7, 49.0, 49.1],
+                type: 'bar',
+                marker: {color: '#2E86AB'}
+            },
+            {
+                name: 'PulseOS',
+                x: ["linear_normal_th-0.5", "nonlinear_normal_th-0.5", "multi_objective_normal_th-0.5", "linear_bimodal_th-0.5", "linear_skewed_th-0.3"],
+                y: [50.0, 545.0, 50.0, 50.0, 50.0],
+                type: 'bar',
+                marker: {color: '#A23B72'}
+            }
+        ];
+        
+        var convergenceLayout = {
+            title: 'Steps to Convergence Comparison',
+            xaxis: { title: 'Scenario' },
+            yaxis: { title: 'Steps' },
+            barmode: 'group'
+        };
+        
+        Plotly.newPlot('convergenceChart', convergenceData, convergenceLayout);
+    </script>
+</body>
+</html>

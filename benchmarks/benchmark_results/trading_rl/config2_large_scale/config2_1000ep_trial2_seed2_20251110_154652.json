@@ -1,0 +1,26 @@
+{
+  "test_config": {
+    "episodes": 1000,
+    "trials": 1,
+    "seed": 2,
+    "no_warm_start": true
+  },
+  "ppo_baseline": {
+    "final_sharpe": 3.625,
+    "episodes": 1000
+  },
+  "pulseos_result": {
+    "final_sharpe": 2.052550873858809,
+    "improvement_vs_ppo": -43.37790692803286,
+    "beats_ppo": false,
+    "excellent": false,
+    "exceeds_previous_best": false
+  },
+  "comparison": {
+    "previous_best_500ep": 4.259,
+    "trial1_1000ep_seed1": 3.688,
+    "trial2_1000ep_seed2": 2.052550873858809,
+    "best_so_far": 4.259
+  },
+  "duration_minutes": 1.1449590666666665
+}

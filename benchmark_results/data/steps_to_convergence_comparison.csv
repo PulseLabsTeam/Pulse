@@ -1,0 +1,6 @@
+scenario,ppo_mean,ppo_std,pulseos_mean,pulseos_std,reduction_percent
+linear_normal_th-0.5,544.6,1485.1335428169414,50.0,0.0,90.81894968784428
+nonlinear_normal_th-0.5,2029.5,2425.403110825085,545.0,1485.0,73.14609509731461
+multi_objective_normal_th-0.5,50.7,3.4655446902326914,50.0,0.0,1.3806706114398477
+linear_bimodal_th-0.5,49.0,0.0,50.0,0.0,-2.0408163265306123
+linear_skewed_th-0.3,49.1,0.3,50.0,0.0,-1.8329938900203637

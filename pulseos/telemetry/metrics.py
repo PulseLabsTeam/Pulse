@@ -42,6 +42,7 @@ class MetricsCollector:
         # Metric storage
         self.metrics: Dict[str, deque] = {
             "survival_signal": deque(maxlen=max_retention),
+            "adaptation_signal": deque(maxlen=max_retention),
             "alpha": deque(maxlen=max_retention),
             "epsilon": deque(maxlen=max_retention),
             "gradient": deque(maxlen=max_retention),
@@ -58,10 +59,11 @@ class MetricsCollector:
         step: int,
         duration: float,
         survival_signal: float,
-        alpha: float,
-        epsilon: float,
-        gradient: float,
-        agent_count: int
+        adaptation_signal: Optional[float] = None,
+        alpha: float = 0.0,
+        epsilon: float = 0.0,
+        gradient: float = 0.0,
+        agent_count: int = 0
     ) -> None:
         """
         Record metrics for a step.
@@ -70,6 +72,7 @@ class MetricsCollector:
             step: Step number
             duration: Step duration in seconds
             survival_signal: Survival signal value
+            adaptation_signal: Adaptation signal value (optional)
             alpha: Learning rate
             epsilon: Exploration rate
             gradient: Gradient value
@@ -78,6 +81,8 @@ class MetricsCollector:
         timestamp = time.time()
         
         self.metrics["survival_signal"].append(MetricPoint(timestamp, survival_signal))
+        if adaptation_signal is not None:
+            self.metrics["adaptation_signal"].append(MetricPoint(timestamp, adaptation_signal))
         self.metrics["alpha"].append(MetricPoint(timestamp, alpha))
         self.metrics["epsilon"].append(MetricPoint(timestamp, epsilon))
         self.metrics["gradient"].append(MetricPoint(timestamp, gradient))

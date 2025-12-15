@@ -1,0 +1,93 @@
+{
+  "test_config": {
+    "episodes": 1000,
+    "trials": 1,
+    "seed": 5,
+    "no_warm_start": true,
+    "optimized_initialization": true,
+    "init_details": {
+      "policy_multiplier": 0.35,
+      "bias_scale": 0.005,
+      "value_multiplier": 0.25
+    }
+  },
+  "ppo_baseline": {
+    "final_sharpe": 3.625,
+    "episodes": 1000
+  },
+  "pulseos_result": {
+    "final_sharpe": 3.6480862318202925,
+    "improvement_vs_ppo": 0.6368615674563437,
+    "beats_ppo": true,
+    "excellent": false,
+    "exceeds_previous_best": false
+  },
+  "all_trials": [
+    {
+      "trial": "1 (prev)",
+      "seed": "Unknown",
+      "sharpe": 4.259,
+      "episodes": 500,
+      "init": "Standard"
+    },
+    {
+      "trial": "1",
+      "seed": 1,
+      "sharpe": 3.688,
+      "episodes": 1000,
+      "init": "Standard"
+    },
+    {
+      "trial": "2",
+      "seed": 2,
+      "sharpe": 2.053,
+      "episodes": 1000,
+      "init": "Standard"
+    },
+    {
+      "trial": "3",
+      "seed": 3,
+      "sharpe": 3.077,
+      "episodes": 1000,
+      "init": "Improved"
+    },
+    {
+      "trial": "4",
+      "seed": 4,
+      "sharpe": 3.536,
+      "episodes": 1000,
+      "init": "Improved"
+    },
+    {
+      "trial": "5",
+      "seed": 5,
+      "sharpe": 3.6480862318202925,
+      "episodes": 1000,
+      "init": "Optimized"
+    }
+  ],
+  "statistics_1000ep": {
+    "avg_sharpe": 3.2004172463640588,
+    "std_sharpe": 0.6136054759655046,
+    "beats_ppo_rate": 0.4,
+    "excellent_rate": 0.0
+  },
+  "statistics_by_init": {
+    "standard": {
+      "avg_sharpe": 2.8705,
+      "std_sharpe": 0.8175000000000001,
+      "beats_ppo_rate": 0.5
+    },
+    "improved": {
+      "avg_sharpe": 3.3064999999999998,
+      "std_sharpe": 0.22950000000000004,
+      "beats_ppo_rate": 0.0
+    },
+    "optimized": {
+      "avg_sharpe": 3.6480862318202925,
+      "std_sharpe": 0.0,
+      "beats_ppo_rate": 1.0
+    }
+  },
+  "duration_minutes": 1.0739425833333334
+}

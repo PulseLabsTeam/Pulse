@@ -15,7 +15,7 @@ from collections import deque
 
 from pulseos.circuits.ptdc import PerformanceThresholdDetectionCircuit
 from pulseos.circuits.ngcm import NonlinearGradientComputationModule
-from pulseos.circuits.apc import AdaptiveParameterController
+from pulseos.circuits.apc_improved import ImprovedAdaptiveParameterController as AdaptiveParameterController
 from pulseos.persistence.snapshot import SnapshotManager
 from pulseos.agent import Agent, SurvivalConstraint
 from pulseos.telemetry.metrics import MetricsCollector
@@ -48,13 +48,14 @@ class Config:
     target_cache_hit_rate: float = 0.75
     
     # APC Configuration
-    alpha_base: float = 0.05
-    alpha_max_change_per_step: float = 0.20  # 20% max change
-    alpha_smooth: float = 0.9  # EMA smoothing
+    alpha_base: float = 0.01
+    alpha_max_change_per_step: float = 0.50
+    alpha_smooth: float = 0.75
     epsilon_min: float = 0.01
-    epsilon_max: float = 0.2
+    epsilon_max: float = 0.3
     epsilon_kappa: float = 1.5
-    gamma: float = 0.1
+    gamma: float = 0.5
+    momentum_decay: float = 0.9
     
     # SPRS Configuration
     snapshot_interval: float = 1.0
@@ -126,7 +127,8 @@ class Runtime:
             epsilon_min=self.config.epsilon_min,
             epsilon_max=self.config.epsilon_max,
             epsilon_kappa=self.config.epsilon_kappa,
-            gamma=self.config.gamma
+            gamma=self.config.gamma,
+            momentum_decay=self.config.momentum_decay
         )
         
         # Initialize persistence subsystem
@@ -144,6 +146,10 @@ class Runtime:
         # Agent management
         self.agents: Dict[str, Agent] = {}
         self.agent_metrics: Dict[str, deque] = {}
+        
+        # Track adapted parameters per agent (for parameter preservation)
+        self.agent_adapted_params: Dict[str, Dict[str, float]] = {}
+        # Format: {agent_id: {"alpha": 0.015, "epsilon": 0.05, "timestamp": step}}
         
         # Runtime state
         self.current_step: int = 0
@@ -176,10 +182,57 @@ class Runtime:
         self.agent_metrics[agent_id] = deque(maxlen=self.config.normalization_window)
         
     def unregister_agent(self, agent_id: str) -> None:
-        """Unregister an agent from the runtime."""
+        """Unregister an agent from the runtime and clean up adapted parameters."""
         if agent_id in self.agents:
             del self.agents[agent_id]
+        if agent_id in self.agent_metrics:
             del self.agent_metrics[agent_id]
+        if agent_id in self.agent_adapted_params:
+            del self.agent_adapted_params[agent_id]
+    
+    def spawn_agent_from_parent(
+        self,
+        parent_id: str,
+        new_agent_id: str,
+        new_agent: Agent
+    ) -> None:
+        """
+        Spawn new agent from parent, inheriting adapted parameters.
+        
+        Preserves Runtime's parameter adaptations across elimination/spawning cycles.
+        
+        Args:
+            parent_id: ID of parent agent (elite performer)
+            new_agent_id: ID of new agent being spawned
+            new_agent: New agent instance
+        """
+        # Get parent's adapted parameters
+        if parent_id in self.agent_adapted_params:
+            parent_params = self.agent_adapted_params[parent_id]
+            
+            # Inherit from parent
+            new_agent.update_learning_rate(parent_params["alpha"])
+            new_agent.update_exploration_rate(parent_params["epsilon"])
+            
+            # Store for new agent
+            self.agent_adapted_params[new_agent_id] = {
+                "alpha": parent_params["alpha"],
+                "epsilon": parent_params["epsilon"],
+                "timestamp": self.current_step
+            }
+        else:
+            # Fallback: use current Runtime parameters
+            new_agent.update_learning_rate(self.apc.get_alpha())
+            new_agent.update_exploration_rate(self.apc.get_epsilon())
+            
+            self.agent_adapted_params[new_agent_id] = {
+                "alpha": self.apc.get_alpha(),
+                "epsilon": self.apc.get_epsilon(),
+                "timestamp": self.current_step
+            }
+        
+        # Register agent with Runtime
+        self.register_agent(new_agent_id, new_agent)
     
     def register_event_handler(self, event_type: str, handler: Callable) -> None:
         """Register an event handler for runtime events."""
@@ -220,17 +273,23 @@ class Runtime:
         # Update PTDC with current metrics
         threshold_status = self.ptdc.evaluate(current_metrics)
         
-        # Compute survival pressure signal
+        # Compute hybrid adaptation signal (variance + survival ratio)
+        adaptation_signal = self._compute_hybrid_adaptation_signal(
+            current_metrics,
+            threshold_status
+        )
+        
+        # Also compute survival signal for logging/compatibility
         survival_signal = self._compute_survival_signal(threshold_status)
         
-        # Compute gradient via NGCM
+        # Compute gradient via NGCM using adaptation signal
         gradient = self.ngcm.compute_gradient(
-            delta=survival_signal,
+            delta=adaptation_signal,
             timestamp=self.current_step
         )
         
-        # Update adaptive parameters via APC
-        alpha, epsilon = self.apc.update_parameters(gradient, survival_signal)
+        # Update adaptive parameters via APC using adaptation signal
+        alpha, epsilon = self.apc.update_parameters(gradient, adaptation_signal)
         
         # Update all agents with new parameters
         update_results = await self._update_agents(alpha, epsilon)
@@ -249,6 +308,7 @@ class Runtime:
             "step": self.current_step,
             "duration": step_duration,
             "survival_signal": survival_signal,
+            "adaptation_signal": adaptation_signal,
             "alpha": alpha,
             "epsilon": epsilon,
             "gradient": gradient,
@@ -261,6 +321,7 @@ class Runtime:
                 step=self.current_step,
                 duration=step_duration,
                 survival_signal=survival_signal,
+                adaptation_signal=adaptation_signal,
                 alpha=alpha,
                 epsilon=epsilon,
                 gradient=gradient,
@@ -270,6 +331,7 @@ class Runtime:
         return {
             "step": self.current_step,
             "survival_signal": survival_signal,
+            "adaptation_signal": adaptation_signal,
             "alpha": alpha,
             "epsilon": epsilon,
             "gradient": gradient,
@@ -316,6 +378,85 @@ class Runtime:
         # Apply constraint-specific computation
         return self.constraint.compute_survival_signal(survival_ratio)
     
+    def _compute_performance_variance_signal(
+        self,
+        current_metrics: Dict[str, float]
+    ) -> float:
+        """
+        Compute adaptation signal from performance variance.
+        
+        Provides continuous signal even when survival ratio is saturated.
+        High variance = agents are exploring = need more adaptation.
+        Low variance = agents converged = less adaptation needed.
+        
+        Args:
+            current_metrics: Dict of {agent_id: performance_metric}
+            
+        Returns:
+            Variance-based adaptation signal in [0, 1] range
+        """
+        if not current_metrics or len(current_metrics) < 2:
+            return 0.5  # Default signal when insufficient data
+        
+        metrics = np.array(list(current_metrics.values()))
+        
+        # Compute coefficient of variation (normalized variance)
+        variance = np.var(metrics)
+        mean = np.abs(np.mean(metrics))
+        
+        if mean > 1e-6:
+            cv = np.sqrt(variance) / mean  # Coefficient of variation
+        else:
+            cv = 1.0  # High variance if mean near zero
+        
+        # Map to [0, 1] range
+        # Scale factor tuned so cv=0.5 → signal=0.5
+        variance_signal = min(1.0, cv * 3.0)
+        
+        return variance_signal
+    
+    def _compute_hybrid_adaptation_signal(
+        self,
+        current_metrics: Dict[str, float],
+        threshold_status: Dict[str, bool]
+    ) -> float:
+        """
+        Compute hybrid adaptation signal combining survival ratio and performance variance.
+        
+        Uses variance when survival ratio is saturated (all succeed/fail),
+        blends both signals when survival ratio is informative.
+        
+        Args:
+            current_metrics: Dict of {agent_id: performance_metric}
+            threshold_status: Dict of {agent_id: meets_threshold_bool}
+            
+        Returns:
+            Hybrid adaptation signal in [0, 1] range
+        """
+        # Compute survival ratio (existing)
+        meeting_threshold = sum(1 for v in threshold_status.values() if v)
+        total_agents = len(threshold_status)
+        survival_ratio = meeting_threshold / total_agents if total_agents > 0 else 0.5
+        
+        # Apply constraint-specific computation
+        survival_signal = self.constraint.compute_survival_signal(survival_ratio)
+        
+        # Compute performance variance
+        variance_signal = self._compute_performance_variance_signal(current_metrics)
+        
+        # Hybrid: use variance when survival ratio is saturated
+        if survival_ratio > 0.9 or survival_ratio < 0.1:
+            # Survival signal saturated (all succeed or all fail)
+            # Use variance signal instead
+            adaptation_signal = variance_signal
+        else:
+            # Both signals informative
+            # Blend: 30% survival ratio, 70% variance
+            # (variance is more continuous, so weight it higher)
+            adaptation_signal = 0.3 * survival_signal + 0.7 * variance_signal
+        
+        return adaptation_signal
+    
     async def _update_agents(self, alpha: float, epsilon: float) -> Dict[str, Any]:
         """Update all agents with new adaptive parameters."""
         results = {}
@@ -359,12 +500,19 @@ class Runtime:
         alpha: float,
         epsilon: float
     ) -> Dict[str, Any]:
-        """Update a single agent with new parameters."""
+        """Update a single agent with new parameters and store them."""
         update_start = time.perf_counter()
         
         # Update agent parameters
         agent.update_learning_rate(alpha)
         agent.update_exploration_rate(epsilon)
+        
+        # Store adapted parameters for this agent (for parameter preservation)
+        self.agent_adapted_params[agent_id] = {
+            "alpha": alpha,
+            "epsilon": epsilon,
+            "timestamp": self.current_step
+        }
         
         # Execute agent step
         agent_result = await agent.step()
@@ -534,16 +682,27 @@ class Runtime:
         
         recent_history = list(self.performance_history)
         
+        # Compute adaptation signal statistics
+        adaptation_signals = [h.get("adaptation_signal", 0.0) for h in recent_history if "adaptation_signal" in h]
+        adaptation_signal_variance = np.var(adaptation_signals) if len(adaptation_signals) > 1 else 0.0
+        
         return {
             "current_step": self.current_step,
             "agent_count": len(self.agents),
             "uptime": time.time() - self.start_time if self.start_time > 0 else 0,
             "average_step_duration": np.mean([h["duration"] for h in recent_history]),
             "average_survival_signal": np.mean([h["survival_signal"] for h in recent_history]),
+            "average_adaptation_signal": np.mean(adaptation_signals) if adaptation_signals else 0.0,
+            "adaptation_signal_variance": adaptation_signal_variance,
             "current_alpha": recent_history[-1]["alpha"] if recent_history else 0,
             "current_epsilon": recent_history[-1]["epsilon"] if recent_history else 0,
+            "alpha_change_magnitude": (
+                abs(recent_history[-1]["alpha"] - recent_history[0]["alpha"]) / recent_history[0]["alpha"]
+                if len(recent_history) > 1 and recent_history[0]["alpha"] > 0 else 0.0
+            ),
             "ngcm_cache_hit_rate": self.ngcm.get_cache_hit_rate(),
             "snapshot_count": self.sprs.get_snapshot_count(),
-            "rollback_count": len([h for h in recent_history if "rollback" in str(h)])
+            "rollback_count": len([h for h in recent_history if "rollback" in str(h)]),
+            "parameter_preservation_count": len(self.agent_adapted_params)
         }
 

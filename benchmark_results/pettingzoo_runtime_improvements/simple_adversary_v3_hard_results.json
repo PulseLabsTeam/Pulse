@@ -1,0 +1,311 @@
+{
+  "environment": "simple_adversary_v3",
+  "avg_convergence_improvement": 11.068702290076327,
+  "avg_alpha_change_magnitude": 0.012071992281839429,
+  "avg_adaptation_signal_variance": 0.003370438179173075,
+  "recommendation": "KEEP_RUNTIME_MARGINAL",
+  "population_only_results": [
+    {
+      "trial": 1,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 3.2073172956498452,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 2,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 28,
+      "success": true,
+      "final_reward": -1.104037758349417,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 3,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 26,
+      "success": true,
+      "final_reward": -3.0138413302842744,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 4,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 9.410078285811657,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 5,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 6.345537251280166,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 6,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 7.069719679634822,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 7,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 6.01423639339506,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 8,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 2.4936023968609953,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 9,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 4.466876373175665,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 10,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 28,
+      "success": true,
+      "final_reward": -2.785661243297993,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 11,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 0.6127093641490369,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 12,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 2.399987910749241,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 13,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 9.888034954781835,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 14,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 6.5763462756641715,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 15,
+      "method": "population_only",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 3.1243323422516447,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    }
+  ],
+  "population_runtime_results": [
+    {
+      "trial": 1,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": -0.4561476866042595,
+      "alpha_change_magnitude": 0.011661334736153169,
+      "adaptation_signal_variance": 0.013523385633736347
+    },
+    {
+      "trial": 2,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 8.433668250109996,
+      "alpha_change_magnitude": 0.012527012315570983,
+      "adaptation_signal_variance": 4.930380657631324e-32
+    },
+    {
+      "trial": 3,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 5.311160679590151,
+      "alpha_change_magnitude": 0.012527012315570983,
+      "adaptation_signal_variance": 4.930380657631324e-32
+    },
+    {
+      "trial": 4,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 11.848184312532515,
+      "alpha_change_magnitude": 0.012527012315570983,
+      "adaptation_signal_variance": 4.930380657631324e-32
+    },
+    {
+      "trial": 5,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 9.362594318576592,
+      "alpha_change_magnitude": 0.012527012315570983,
+      "adaptation_signal_variance": 4.930380657631324e-32
+    },
+    {
+      "trial": 6,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": -4.219273657139889,
+      "alpha_change_magnitude": 0.012269727152764559,
+      "adaptation_signal_variance": 0.0006222222222222233
+    },
+    {
+      "trial": 7,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 18,
+      "success": true,
+      "final_reward": -2.8769483039509347,
+      "alpha_change_magnitude": 0.007004605545484106,
+      "adaptation_signal_variance": 0.0023765432098765476
+    },
+    {
+      "trial": 8,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 1.729350075853665,
+      "alpha_change_magnitude": 0.011371641131342931,
+      "adaptation_signal_variance": 0.0011555555555555577
+    },
+    {
+      "trial": 9,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 3.313800999234274,
+      "alpha_change_magnitude": 0.011138172892115501,
+      "adaptation_signal_variance": 0.0011555555555555579
+    },
+    {
+      "trial": 10,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 7.980994894235085,
+      "alpha_change_magnitude": 0.007472298849042422,
+      "adaptation_signal_variance": 0.002400000000000004
+    },
+    {
+      "trial": 11,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 2.0840924258975275,
+      "alpha_change_magnitude": 0.012527012315570983,
+      "adaptation_signal_variance": 4.930380657631324e-32
+    },
+    {
+      "trial": 12,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 4.679580640723911,
+      "alpha_change_magnitude": 0.012527012315570983,
+      "adaptation_signal_variance": 4.930380657631324e-32
+    },
+    {
+      "trial": 13,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 2.378267882716019,
+      "alpha_change_magnitude": 0.0096743447719181,
+      "adaptation_signal_variance": 0.0019555555555555585
+    },
+    {
+      "trial": 14,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 20,
+      "success": true,
+      "final_reward": 9.523134571334626,
+      "alpha_change_magnitude": 0.022798672939773786,
+      "adaptation_signal_variance": 0.02736775495509433
+    },
+    {
+      "trial": 15,
+      "method": "population_runtime_improved",
+      "environment": "simple_adversary_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 4.986540651291986,
+      "alpha_change_magnitude": 0.012527012315570983,
+      "adaptation_signal_variance": 4.930380657631324e-32
+    }
+  ]
+}

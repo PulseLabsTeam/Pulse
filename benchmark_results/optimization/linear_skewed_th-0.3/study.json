@@ -1,0 +1,316 @@
+{
+  "best_params": {
+    "survival_threshold": 0.4,
+    "alpha_base": 0.0010815803631180551,
+    "epsilon_min": 0.060000000000000005,
+    "epsilon_max": 0.7,
+    "gamma": 2.0,
+    "beta": 10.0,
+    "cache_size": 384,
+    "alpha_max_change": 0.2
+  },
+  "best_value": 93.36283185840708,
+  "n_trials": 20,
+  "trials": [
+    {
+      "number": 0,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.55,
+        "alpha_base": 0.0711447600934342,
+        "epsilon_min": 0.08,
+        "epsilon_max": 0.5,
+        "gamma": 2.0,
+        "beta": 4.0,
+        "cache_size": 64,
+        "alpha_max_change": 0.45000000000000007
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 1,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.7,
+        "alpha_base": 0.013311216080736894,
+        "epsilon_min": 0.01,
+        "epsilon_max": 0.7,
+        "gamma": 9.0,
+        "beta": 6.0,
+        "cache_size": 128,
+        "alpha_max_change": 0.15000000000000002
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 2,
+      "value": 0.6622516556291438,
+      "params": {
+        "survival_threshold": 0.5,
+        "alpha_base": 0.003752055855124282,
+        "epsilon_min": 0.05,
+        "epsilon_max": 0.30000000000000004,
+        "gamma": 7.0,
+        "beta": 4.0,
+        "cache_size": 192,
+        "alpha_max_change": 0.25
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 3,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.6000000000000001,
+        "alpha_base": 0.02267398652378041,
+        "epsilon_min": 0.02,
+        "epsilon_max": 0.4,
+        "gamma": 6.0,
+        "beta": 2.0,
+        "cache_size": 320,
+        "alpha_max_change": 0.15000000000000002
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 4,
+      "value": -24.99999999999999,
+      "params": {
+        "survival_threshold": 0.3,
+        "alpha_base": 0.07025166339242163,
+        "epsilon_min": 0.09999999999999999,
+        "epsilon_max": 0.6,
+        "gamma": 4.0,
+        "beta": 2.0,
+        "cache_size": 384,
+        "alpha_max_change": 0.25
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 5,
+      "value": 26.47058823529412,
+      "params": {
+        "survival_threshold": 0.35,
+        "alpha_base": 0.0030586566669785274,
+        "epsilon_min": 0.01,
+        "epsilon_max": 0.7,
+        "gamma": 3.0,
+        "beta": 14.0,
+        "cache_size": 192,
+        "alpha_max_change": 0.30000000000000004
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 6,
+      "value": 1.315789473684206,
+      "params": {
+        "survival_threshold": 0.65,
+        "alpha_base": 0.00035856126103454,
+        "epsilon_min": 0.09999999999999999,
+        "epsilon_max": 0.6,
+        "gamma": 10.0,
+        "beta": 18.0,
+        "cache_size": 320,
+        "alpha_max_change": 0.5
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 7,
+      "value": 0.6622516556291438,
+      "params": {
+        "survival_threshold": 0.35,
+        "alpha_base": 0.0003872118032174585,
+        "epsilon_min": 0.01,
+        "epsilon_max": 0.30000000000000004,
+        "gamma": 4.0,
+        "beta": 6.0,
+        "cache_size": 448,
+        "alpha_max_change": 0.25
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 8,
+      "value": 18.478260869565222,
+      "params": {
+        "survival_threshold": 0.45,
+        "alpha_base": 0.004247058562261873,
+        "epsilon_min": 0.02,
+        "epsilon_max": 0.6,
+        "gamma": 1.0,
+        "beta": 20.0,
+        "cache_size": 448,
+        "alpha_max_change": 0.15000000000000002
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 9,
+      "value": -80.95238095238096,
+      "params": {
+        "survival_threshold": 0.3,
+        "alpha_base": 0.027950159165083355,
+        "epsilon_min": 0.08,
+        "epsilon_max": 0.6,
+        "gamma": 8.0,
+        "beta": 2.0,
+        "cache_size": 192,
+        "alpha_max_change": 0.15000000000000002
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 10,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.95,
+        "alpha_base": 0.00010422971466648504,
+        "epsilon_min": 0.04,
+        "epsilon_max": 0.1,
+        "gamma": 3.0,
+        "beta": 14.0,
+        "cache_size": 192,
+        "alpha_max_change": 0.4
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 11,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.45,
+        "alpha_base": 0.002699030904680383,
+        "epsilon_min": 0.03,
+        "epsilon_max": 0.7,
+        "gamma": 1.0,
+        "beta": 20.0,
+        "cache_size": 512,
+        "alpha_max_change": 0.35
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 12,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.4,
+        "alpha_base": 0.0031914764088645706,
+        "epsilon_min": 0.03,
+        "epsilon_max": 0.7,
+        "gamma": 1.0,
+        "beta": 14.0,
+        "cache_size": 512,
+        "alpha_max_change": 0.1
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 13,
+      "value": -0.6711409395973202,
+      "params": {
+        "survival_threshold": 0.8,
+        "alpha_base": 0.0012110097744952462,
+        "epsilon_min": 0.01,
+        "epsilon_max": 0.5,
+        "gamma": 3.0,
+        "beta": 16.0,
+        "cache_size": 256,
+        "alpha_max_change": 0.30000000000000004
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 14,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.45,
+        "alpha_base": 0.007678900778334423,
+        "epsilon_min": 0.03,
+        "epsilon_max": 0.5,
+        "gamma": 5.0,
+        "beta": 10.0,
+        "cache_size": 448,
+        "alpha_max_change": 0.35
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 15,
+      "value": 93.36283185840708,
+      "params": {
+        "survival_threshold": 0.4,
+        "alpha_base": 0.0010815803631180551,
+        "epsilon_min": 0.060000000000000005,
+        "epsilon_max": 0.7,
+        "gamma": 2.0,
+        "beta": 10.0,
+        "cache_size": 384,
+        "alpha_max_change": 0.2
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 16,
+      "value": 13.793103448275861,
+      "params": {
+        "survival_threshold": 0.35,
+        "alpha_base": 0.0009767874775847064,
+        "epsilon_min": 0.06999999999999999,
+        "epsilon_max": 0.7,
+        "gamma": 3.0,
+        "beta": 10.0,
+        "cache_size": 256,
+        "alpha_max_change": 0.2
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 17,
+      "value": 4.458598726114654,
+      "params": {
+        "survival_threshold": 0.8,
+        "alpha_base": 0.0010958713211454885,
+        "epsilon_min": 0.060000000000000005,
+        "epsilon_max": 0.2,
+        "gamma": 5.0,
+        "beta": 12.0,
+        "cache_size": 64,
+        "alpha_max_change": 0.35
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 18,
+      "value": -2.0408163265306123,
+      "params": {
+        "survival_threshold": 0.55,
+        "alpha_base": 0.0005573742801473281,
+        "epsilon_min": 0.05,
+        "epsilon_max": 0.4,
+        "gamma": 2.0,
+        "beta": 8.0,
+        "cache_size": 384,
+        "alpha_max_change": 0.30000000000000004
+      },
+      "state": "COMPLETE"
+    },
+    {
+      "number": 19,
+      "value": 5.063291139240502,
+      "params": {
+        "survival_threshold": 0.4,
+        "alpha_base": 0.00015881779695544007,
+        "epsilon_min": 0.060000000000000005,
+        "epsilon_max": 0.5,
+        "gamma": 4.0,
+        "beta": 12.0,
+        "cache_size": 128,
+        "alpha_max_change": 0.2
+      },
+      "state": "COMPLETE"
+    }
+  ]
+}

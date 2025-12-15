@@ -50,3 +50,12 @@ Thumbs.db
 *.snapshot
 benchmarks/results/
 
+# Backup and IDE files
+.backup_conflicts/
+.cursor/
+venv39/
+venv313/
+*.zip
+*.pkg
+zixquVjH
+

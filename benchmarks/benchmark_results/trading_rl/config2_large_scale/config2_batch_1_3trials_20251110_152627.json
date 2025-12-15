@@ -1,0 +1,13 @@
+{
+  "ppo_baseline": 4.195870744057008,
+  "test_config": {
+    "episodes": 400,
+    "batch_size": 3,
+    "total_trials": 3
+  },
+  "results": [
+    {
+      "trial": 1,
+      "seed": 1,
+      "final_sharpe": 4.229800617492224,
+      "beats_ppo": 

@@ -1,0 +1,331 @@
+{
+  "environment": "simple_tag_v3",
+  "avg_convergence_improvement": 95.0,
+  "avg_alpha_change_magnitude": 0.0168763439607875,
+  "avg_adaptation_signal_variance": 2.2186164765478866e-05,
+  "recommendation": "KEEP_RUNTIME",
+  "population_only_results": [
+    {
+      "trial": 1,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 100,
+      "success": false,
+      "final_coverage": 0.6995369322311433,
+      "alpha_changes": [],
+      "adaptation_signals": [],
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 2,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 100,
+      "success": false,
+      "final_coverage": 0.6990836703044426,
+      "alpha_changes": [],
+      "adaptation_signals": [],
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 3,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 100,
+      "success": false,
+      "final_coverage": 0.6991547891124037,
+      "alpha_changes": [],
+      "adaptation_signals": [],
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 4,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 100,
+      "success": false,
+      "final_coverage": 0.699281203752951,
+      "alpha_changes": [],
+      "adaptation_signals": [],
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 5,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 100,
+      "success": false,
+      "final_coverage": 0.6988997756938726,
+      "alpha_changes": [],
+      "adaptation_signals": [],
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 6,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 100,
+      "success": false,
+      "final_coverage": 0.6991272967819914,
+      "alpha_changes": [],
+      "adaptation_signals": [],
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 7,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 100,
+      "success": false,
+      "final_coverage": 0.6988197905278789,
+      "alpha_changes": [],
+      "adaptation_signals": [],
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 8,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 100,
+      "success": false,
+      "final_coverage": 0.6992773444329423,
+      "alpha_changes": [],
+      "adaptation_signals": [],
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 9,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 100,
+      "success": false,
+      "final_coverage": 0.6991890405862075,
+      "alpha_changes": [],
+      "adaptation_signals": [],
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 10,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 100,
+      "success": false,
+      "final_coverage": 0.6992096112923727,
+      "alpha_changes": [],
+      "adaptation_signals": [],
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    }
+  ],
+  "population_runtime_results": [
+    {
+      "trial": 1,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 5,
+      "success": true,
+      "final_coverage": 0.984991268267948,
+      "alpha_changes": [
+        0.010030898450033271,
+        0.010088584818173785,
+        0.010169071498514289
+      ],
+      "adaptation_signals": [
+        0.011236338581264693,
+        0.019121142423793727,
+        0.01488907877007625
+      ],
+      "alpha_change_magnitude": 0.016907149851428868,
+      "adaptation_signal_variance": 1.0380333921248471e-05
+    },
+    {
+      "trial": 2,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 5,
+      "success": true,
+      "final_coverage": 0.9827418723683478,
+      "alpha_changes": [
+        0.010030889650516371,
+        0.010088423746985278,
+        0.010168639300858066
+      ],
+      "adaptation_signals": [
+        0.011517926898506106,
+        0.023701230580141633,
+        0.019273589915894167
+      ],
+      "alpha_change_magnitude": 0.016863930085806583,
+      "adaptation_signal_variance": 2.5354133254436932e-05
+    },
+    {
+      "trial": 3,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 5,
+      "success": true,
+      "final_coverage": 0.9839348139699309,
+      "alpha_changes": [
+        0.010030854622500106,
+        0.010088353953141962,
+        0.010168423218017216
+      ],
+      "adaptation_signals": [
+        0.012615297050092317,
+        0.023832968498885703,
+        0.02296309795443852
+      ],
+      "alpha_change_magnitude": 0.016842321801721627,
+      "adaptation_signal_variance": 2.5963312339239916e-05
+    },
+    {
+      "trial": 4,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 5,
+      "success": true,
+      "final_coverage": 0.9836864827515047,
+      "alpha_changes": [
+        0.010030910627774527,
+        0.010088537418938,
+        0.010169052409025433
+      ],
+      "adaptation_signals": [
+        0.010846645634929946,
+        0.02136874668857265,
+        0.012305173060204386
+      ],
+      "alpha_change_magnitude": 0.01690524090254327,
+      "adaptation_signal_variance": 2.1665586638911036e-05
+    },
+    {
+      "trial": 5,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 5,
+      "success": true,
+      "final_coverage": 0.9837454034497147,
+      "alpha_changes": [
+        0.010030951855987989,
+        0.010088452569717295,
+        0.010168739959847944
+      ],
+      "adaptation_signals": [
+        0.00952732511066657,
+        0.026511570826625468,
+        0.016025359537632712
+      ],
+      "alpha_change_magnitude": 0.016873995984794353,
+      "adaptation_signal_variance": 4.896107568350051e-05
+    },
+    {
+      "trial": 6,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 5,
+      "success": true,
+      "final_coverage": 0.987109645149458,
+      "alpha_changes": [
+        0.01003089196082556,
+        0.010088604394937915,
+        0.01016892174597802
+      ],
+      "adaptation_signals": [
+        0.011443996012965113,
+        0.01810525927299258,
+        0.02100781305975605
+      ],
+      "alpha_change_magnitude": 0.016892174597801964,
+      "adaptation_signal_variance": 1.602931591210396e-05
+    },
+    {
+      "trial": 7,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 5,
+      "success": true,
+      "final_coverage": 0.9866293744492616,
+      "alpha_changes": [
+        0.010030752012361008,
+        0.010088299853348802,
+        0.010168557486827759
+      ],
+      "adaptation_signals": [
+        0.01589894382653591,
+        0.019453780795140607,
+        0.01842193733677399
+      ],
+      "alpha_change_magnitude": 0.01685574868277584,
+      "adaptation_signal_variance": 2.2296736720706733e-06
+    },
+    {
+      "trial": 8,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 5,
+      "success": true,
+      "final_coverage": 0.9837656981953303,
+      "alpha_changes": [
+        0.010030896948295176,
+        0.010088610828709571,
+        0.010168957355900392
+      ],
+      "adaptation_signals": [
+        0.011284394844816333,
+        0.018198633580327157,
+        0.020110617155440165
+      ],
+      "alpha_change_magnitude": 0.01689573559003916,
+      "adaptation_signal_variance": 1.437384208441046e-05
+    },
+    {
+      "trial": 9,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 5,
+      "success": true,
+      "final_coverage": 0.9815516182404149,
+      "alpha_changes": [
+        0.010030793062100557,
+        0.010088375761615528,
+        0.01016830840548262
+      ],
+      "adaptation_signals": [
+        0.01458530322406477,
+        0.019487703111703465,
+        0.02966151919669365
+      ],
+      "alpha_change_magnitude": 0.01683084054826204,
+      "adaptation_signal_variance": 3.942581627143058e-05
+    },
+    {
+      "trial": 10,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 5,
+      "success": true,
+      "final_coverage": 0.9829594047047582,
+      "alpha_changes": [
+        0.01003090798263575,
+        0.010088630689803143,
+        0.010168963015627013
+      ],
+      "adaptation_signals": [
+        0.010931291210973571,
+        0.018225140957470427,
+        0.020803433137073123
+      ],
+      "alpha_change_magnitude": 0.016896301562701298,
+      "adaptation_signal_variance": 1.747855787743614e-05
+    }
+  ]
+}

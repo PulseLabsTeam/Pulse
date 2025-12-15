@@ -1,0 +1,311 @@
+{
+  "environment": "simple_spread_v3",
+  "avg_convergence_improvement": 0.0,
+  "avg_alpha_change_magnitude": 0.10300651072972691,
+  "avg_adaptation_signal_variance": 0.02728975856530702,
+  "recommendation": "REMOVE_RUNTIME",
+  "population_only_results": [
+    {
+      "trial": 1,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -16.41292344176122,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 2,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -17.551238624519453,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 3,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -22.03742536173806,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 4,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -29.167818881911348,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 5,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -23.606180379606712,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 6,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -15.868886401571542,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 7,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -26.400799093066485,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 8,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -28.96419530431743,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 9,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -18.985674929137577,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 10,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -19.071742315187738,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 11,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -28.60196867868831,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 12,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -19.61651534833634,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 13,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -15.55248013661292,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 14,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -18.984220994808652,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 15,
+      "method": "population_only",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -15.713348416082752,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    }
+  ],
+  "population_runtime_results": [
+    {
+      "trial": 1,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -20.661276912132085,
+      "alpha_change_magnitude": 0.10001232534974508,
+      "adaptation_signal_variance": 0.0255921680124769
+    },
+    {
+      "trial": 2,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -17.472931419694746,
+      "alpha_change_magnitude": 0.1051194499058718,
+      "adaptation_signal_variance": 0.024179527401609006
+    },
+    {
+      "trial": 3,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -16.731082428310575,
+      "alpha_change_magnitude": 0.10252072504617765,
+      "adaptation_signal_variance": 0.01954035206431468
+    },
+    {
+      "trial": 4,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -18.663976381459683,
+      "alpha_change_magnitude": 0.11229901760416733,
+      "adaptation_signal_variance": 0.033367428780357644
+    },
+    {
+      "trial": 5,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -18.732616667010163,
+      "alpha_change_magnitude": 0.09430869845257778,
+      "adaptation_signal_variance": 0.03401172236179621
+    },
+    {
+      "trial": 6,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -22.86282934087556,
+      "alpha_change_magnitude": 0.08741916955831898,
+      "adaptation_signal_variance": 0.035977737093416944
+    },
+    {
+      "trial": 7,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -27.002762326654032,
+      "alpha_change_magnitude": 0.07218823142217078,
+      "adaptation_signal_variance": 0.037234575523509277
+    },
+    {
+      "trial": 8,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -18.881038893759253,
+      "alpha_change_magnitude": 0.10431548825492967,
+      "adaptation_signal_variance": 0.03206009304565652
+    },
+    {
+      "trial": 9,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -16.703299854021182,
+      "alpha_change_magnitude": 0.11045092692040566,
+      "adaptation_signal_variance": 0.025112396263529797
+    },
+    {
+      "trial": 10,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -20.232031812883527,
+      "alpha_change_magnitude": 0.11143712203193402,
+      "adaptation_signal_variance": 0.03462071916859222
+    },
+    {
+      "trial": 11,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -23.527907001801974,
+      "alpha_change_magnitude": 0.10729498865332097,
+      "adaptation_signal_variance": 0.022343094986105268
+    },
+    {
+      "trial": 12,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -18.146836840202926,
+      "alpha_change_magnitude": 0.11187054030182153,
+      "adaptation_signal_variance": 0.020616935833228316
+    },
+    {
+      "trial": 13,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -21.773060382839258,
+      "alpha_change_magnitude": 0.10570401614121254,
+      "adaptation_signal_variance": 0.02215452440698434
+    },
+    {
+      "trial": 14,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -15.476570650284115,
+      "alpha_change_magnitude": 0.10733317210912893,
+      "adaptation_signal_variance": 0.01684743144612235
+    },
+    {
+      "trial": 15,
+      "method": "population_runtime_improved",
+      "environment": "simple_spread_v3",
+      "convergence_episodes": 300,
+      "success": false,
+      "final_reward": -17.203431296749383,
+      "alpha_change_magnitude": 0.11282378919412107,
+      "adaptation_signal_variance": 0.02568767209190589
+    }
+  ]
+}

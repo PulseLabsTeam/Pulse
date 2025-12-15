@@ -1,0 +1,311 @@
+{
+  "environment": "simple_tag_v3",
+  "avg_convergence_improvement": 15.590200445434302,
+  "avg_alpha_change_magnitude": 0.0085635185751003,
+  "avg_adaptation_signal_variance": 0.0022936380490630555,
+  "recommendation": "KEEP_RUNTIME_MARGINAL",
+  "population_only_results": [
+    {
+      "trial": 1,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 26,
+      "success": true,
+      "final_reward": 3.5513317120259984,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 2,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 57,
+      "success": true,
+      "final_reward": 3.4517657520860343,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 3,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 2.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 4,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 32,
+      "success": true,
+      "final_reward": -16.22947147756836,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 5,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 5.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 6,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 23,
+      "success": true,
+      "final_reward": 2.772055704478691,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 7,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 16,
+      "success": true,
+      "final_reward": 3.8356824206632663,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 8,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 21,
+      "success": true,
+      "final_reward": 2.3704207965168766,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 9,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 64,
+      "success": true,
+      "final_reward": 6.021452532812499,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 10,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 1.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 11,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 65,
+      "success": true,
+      "final_reward": 5.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 12,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 6.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 13,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 3.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 14,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 0.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    },
+    {
+      "trial": 15,
+      "method": "population_only",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 55,
+      "success": true,
+      "final_reward": 6.0,
+      "alpha_change_magnitude": 0.0,
+      "adaptation_signal_variance": 0.0
+    }
+  ],
+  "population_runtime_results": [
+    {
+      "trial": 1,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 4.0,
+      "alpha_change_magnitude": 0.01122646851038512,
+      "adaptation_signal_variance": 0.000899999999999999
+    },
+    {
+      "trial": 2,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 47,
+      "success": true,
+      "final_reward": 2.9154809458231448,
+      "alpha_change_magnitude": 3.611185066081102e-06,
+      "adaptation_signal_variance": 0.002133884110457222
+    },
+    {
+      "trial": 3,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 39,
+      "success": true,
+      "final_reward": 3.115143018242313,
+      "alpha_change_magnitude": 0.005018448527204823,
+      "adaptation_signal_variance": 0.0031286982248520737
+    },
+    {
+      "trial": 4,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 18,
+      "success": true,
+      "final_reward": 6.0,
+      "alpha_change_magnitude": 0.009509294337084646,
+      "adaptation_signal_variance": 0.00029513888888888943
+    },
+    {
+      "trial": 5,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 19,
+      "success": true,
+      "final_reward": 4.788094598536492,
+      "alpha_change_magnitude": 0.009615992219203125,
+      "adaptation_signal_variance": 0.0023684210526315795
+    },
+    {
+      "trial": 6,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 29,
+      "success": true,
+      "final_reward": 3.5895001920317213,
+      "alpha_change_magnitude": 0.014013232576047356,
+      "adaptation_signal_variance": 0.003852556480380501
+    },
+    {
+      "trial": 7,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 41,
+      "success": true,
+      "final_reward": 0.474438310018952,
+      "alpha_change_magnitude": 0.005339889959280961,
+      "adaptation_signal_variance": 0.0031387566924449754
+    },
+    {
+      "trial": 8,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 18,
+      "success": true,
+      "final_reward": -8.363969688612734,
+      "alpha_change_magnitude": 0.014434230570838959,
+      "adaptation_signal_variance": 0.003472222222222222
+    },
+    {
+      "trial": 9,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 49,
+      "success": true,
+      "final_reward": -4.7287391031292,
+      "alpha_change_magnitude": 0.008890127782233172,
+      "adaptation_signal_variance": 0.004057684298209081
+    },
+    {
+      "trial": 10,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 0.0,
+      "alpha_change_magnitude": 0.006925568874209358,
+      "adaptation_signal_variance": 0.0035000000000000014
+    },
+    {
+      "trial": 11,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 3.0,
+      "alpha_change_magnitude": 0.010043840302168677,
+      "adaptation_signal_variance": 0.00034999999999999967
+    },
+    {
+      "trial": 12,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 27,
+      "success": true,
+      "final_reward": 6.370464510534594,
+      "alpha_change_magnitude": 0.0067799625195990795,
+      "adaptation_signal_variance": 0.003333333333333335
+    },
+    {
+      "trial": 13,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 17,
+      "success": true,
+      "final_reward": 1.088182471771109,
+      "alpha_change_magnitude": 0.007411946172695971,
+      "adaptation_signal_variance": 0.0016738754325259532
+    },
+    {
+      "trial": 14,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 2.0,
+      "alpha_change_magnitude": 0.008986795183400613,
+      "adaptation_signal_variance": 0.0011000000000000005
+    },
+    {
+      "trial": 15,
+      "method": "population_runtime_improved",
+      "environment": "simple_tag_v3",
+      "convergence_episodes": 15,
+      "success": true,
+      "final_reward": 2.0,
+      "alpha_change_magnitude": 0.010253369907086557,
+      "adaptation_signal_variance": 0.0010999999999999998
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "test_config": {
+    "episodes": 1000,
+    "trials": 1,
+    "seed": 4,
+    "no_warm_start": true,
+    "improved_initialization": true
+  },
+  "ppo_baseline": {
+    "final_sharpe": 3.625,
+    "episodes": 1000
+  },
+  "pulseos_result": {
+    "final_sharpe": 3.53584662729013,
+    "improvement_vs_ppo": -2.4594033850998653,
+    "beats_ppo": false,
+    "excellent": false,
+    "exceeds_previous_best": false
+  },
+  "all_trials": [
+    {
+      "trial": "1 (prev)",
+      "seed": "Unknown",
+      "sharpe": 4.259,
+      "episodes": 500,
+      "init": "Standard"
+    },
+    {
+      "trial": "1",
+      "seed": 1,
+      "sharpe": 3.688,
+      "episodes": 1000,
+      "init": "Standard"
+    },
+    {
+      "trial": "2",
+      "seed": 2,
+      "sharpe": 2.053,
+      "episodes": 1000,
+      "init": "Standard"
+    },
+    {
+      "trial": "3",
+      "seed": 3,
+      "sharpe": 3.077,
+      "episodes": 1000,
+      "init": "Improved"
+    },
+    {
+      "trial": "4",
+      "seed": 4,
+      "sharpe": 3.53584662729013,
+      "episodes": 1000,
+      "init": "Improved"
+    }
+  ],
+  "statistics_1000ep": {
+    "avg_sharpe": 3.0884616568225325,
+    "std_sharpe": 0.6387315063990224,
+    "beats_ppo_rate": 0.25,
+    "excellent_rate": 0.0
+  },
+  "statistics_improved_init": {
+    "avg_sharpe": 3.306423313645065,
+    "std_sharpe": 0.22942331364506496,
+    "beats_ppo_rate": 0.0,
+    "excellent_rate": 0.0
+  },
+  "duration_minutes": 1.048937
+}

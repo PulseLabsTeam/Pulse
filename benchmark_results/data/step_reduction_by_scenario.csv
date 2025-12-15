@@ -1,0 +1,6 @@
+scenario,reduction_percent,std
+linear_normal_th-0.5,90.81894968784428,0.0
+nonlinear_normal_th-0.5,73.14609509731461,0.0
+multi_objective_normal_th-0.5,1.3806706114398477,0.0
+linear_bimodal_th-0.5,-2.0408163265306123,0.0
+linear_skewed_th-0.3,-1.8329938900203637,0.0

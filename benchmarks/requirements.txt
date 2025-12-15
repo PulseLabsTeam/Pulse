@@ -1,0 +1,27 @@
+# Benchmark Suite Dependencies
+# Install with: pip install -r benchmarks/requirements.txt
+
+# Core dependencies (already in main requirements.txt)
+numpy
+
+# Gym environments
+gymnasium>=0.28.0
+# Alternative: gym>=0.21.0
+
+# Multi-agent environments
+pettingzoo[mpe]>=1.24.0
+
+# Plotting
+matplotlib>=3.5.0
+
+# Optional: For better PPO baseline comparison
+# stable-baselines3>=2.0.0
+# torch>=1.12.0
+
+# RLHF Benchmark - HH-RLHF Dataset
+datasets>=2.14.0
+
+# Financial Trading RL Test
+yfinance>=0.2.0
+pandas>=1.5.0
+
