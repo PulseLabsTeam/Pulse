@@ -1,7 +1,7 @@
 """
 PulseOS Framework - Production-Grade Survival-Pressure Learning System
 
-A technically sophisticated implementation of patent-specified adaptive learning
+A technically sophisticated implementation of patent-pending adaptive learning
 algorithms with full performance optimization and production-ready architecture.
 
 This framework implements:

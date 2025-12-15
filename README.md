@@ -17,7 +17,7 @@ The framework provides:
 
 ### Core Architecture
 
-- ✅ Full patent algorithm implementation
+- ✅ Full patent-pending algorithm implementation
 - ✅ Multi-layer architecture with clean separation of concerns
 - ✅ Event-driven design with backpressure handling
 - ✅ Dependency injection for all components

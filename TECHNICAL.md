@@ -1,8 +1,8 @@
 # PulseOS Technical Documentation
 
-## Patent Implementation Mapping
+## Patent-Pending Implementation Mapping
 
-This document maps patent-specified algorithms to their implementations in PulseOS.
+This document maps patent-pending algorithm specifications to their implementations in PulseOS.
 
 ### Performance Threshold Detection Circuit (PTDC)
 

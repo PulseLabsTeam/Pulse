@@ -1,4 +1,4 @@
-"""Circuits package - Core patent-specified algorithms"""
+"""Circuits package - Core patent-pending algorithms"""
 
 from pulseos.circuits.ptdc import PerformanceThresholdDetectionCircuit
 from pulseos.circuits.ngcm import NonlinearGradientComputationModule
