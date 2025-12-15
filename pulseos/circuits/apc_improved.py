@@ -84,9 +84,7 @@ class ImprovedAdaptiveParameterController:
         survival_signal: float
     ) -> Tuple[float, float]:
         """
-        Update adaptive parameters with improved adaptation magnitude.
-        
-        Uses momentum-based updates to accumulate adaptation over multiple steps.
+        Update adaptive parameters using momentum-based updates.
         
         Args:
             gradient: Gradient value G(t) from NGCM

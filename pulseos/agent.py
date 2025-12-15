@@ -1,7 +1,7 @@
 """
 Agent Interface and Survival Constraint System
 
-Defines the agent interface and sophisticated constraint algebra.
+Defines the agent interface and constraint algebra.
 """
 
 from abc import ABC, abstractmethod
@@ -28,7 +28,7 @@ class Constraint:
 
 class SurvivalConstraint:
     """
-    Sophisticated constraint system with full constraint algebra.
+    Constraint system with full constraint algebra.
     
     Features:
     - Composite constraints: AND, OR, NOT operations

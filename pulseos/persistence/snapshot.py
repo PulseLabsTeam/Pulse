@@ -1,7 +1,7 @@
 """
 State Persistence and Rollback Subsystem (SPRS)
 
-Advanced snapshot system with delta encoding, compression, and automated rollback.
+Snapshot system with delta encoding, compression, and automated rollback.
 """
 
 import time

@@ -1,7 +1,5 @@
 """
-Architectural Improvements for PulseOS
-
-Phase 3: Enhanced components for complex scenarios:
+Extended circuit implementations for complex scenarios:
 - Multi-threshold PTDC for bimodal and multi-objective scenarios
 - Skewness-aware NGCM for skewed distributions
 - Multi-objective survival coordination
@@ -20,7 +18,7 @@ from pulseos.circuits.apc import AdaptiveParameterController
 
 class MultiThresholdPTDC(PerformanceThresholdDetectionCircuit):
     """
-    Enhanced PTDC that handles multiple performance regions.
+    PTDC implementation that handles multiple performance regions.
     
     For bimodal: Tracks distance to BOTH preference peaks
     For multi-objective: Tracks distance to EACH objective threshold
@@ -161,7 +159,7 @@ class MultiThresholdPTDC(PerformanceThresholdDetectionCircuit):
 
 class SkewnessAwareNGCM(NonlinearGradientComputationModule):
     """
-    Enhanced NGCM that adapts gradient computation to distribution shape.
+    NGCM implementation that adapts gradient computation to distribution shape.
     
     For skewed distributions:
     - Detects skewness direction (left/right)

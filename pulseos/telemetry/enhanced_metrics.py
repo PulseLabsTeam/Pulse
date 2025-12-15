@@ -1,7 +1,7 @@
 """
-Enhanced Telemetry with Detailed Metrics
+Telemetry with detailed metrics
 
-Provides comprehensive metrics including gradient history, cache metrics,
+Provides metrics including gradient history, cache metrics,
 and convergence tracking as specified in review requirements.
 """
 
@@ -47,7 +47,7 @@ class ConvergencePoint:
 
 class EnhancedMetricsCollector:
     """
-    Enhanced metrics collector with detailed tracking.
+    Metrics collector with detailed tracking.
     
     Tracks:
     - Gradient computation history
@@ -58,7 +58,7 @@ class EnhancedMetricsCollector:
     
     def __init__(self, max_history: int = 10000):
         """
-        Initialize enhanced metrics collector.
+        Initialize metrics collector.
         
         Args:
             max_history: Maximum history points to retain
@@ -282,7 +282,7 @@ class EnhancedMetricsCollector:
             return obj
     
     def export_comprehensive_report(self) -> str:
-        """Export comprehensive metrics report as JSON."""
+        """Export metrics report as JSON."""
         report = {
             "timestamp": time.time(),
             "gradient_statistics": self.get_gradient_statistics(),
